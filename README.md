@@ -1,39 +1,59 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# WANDERLUST Blog!
+ 
+### Top 5 Must-Visit Destinations To Zanzibar
 
-Welcome,
+![Wanderlust Bolg](documentation/images/)
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Portfolio 4 Projects for Code Institute's Diploma in Full Stack Software Development.
+___
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+Zanzibar Wanderlust is a travel blog dedicated to showcasing the top 5 destinations in Zanzibar. While our primary focus is on highlighting these must-visit spots, we also provide a platform for users to engage with our content and share their own travel experiences.
 
-## Codeanywhere Reminders
+This full-stack blog site offers users the opportunity to explore detailed blog posts about each destination, create an account to personalize their experience, and leave comments to share their thoughts or ask questions. Join us as we take you on a virtual journey to the breathtaking sights and cultural wonders of Zanzibar, and become a part of our vibrant travel community.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+Link to live site - [/](/)
 
-`python3 -m http.server`
+## CONTENTS
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- [Wanderlust Bolg](#wanderlust-blog)
+    - [Top 5 Must-Visit Destinations To Zanzibar](#Top-5-Must-Visit-Destinations-To-Zanzibar)
+  - [CONTENTS](#contents)
+  - [Site Objectives](#site-objectives)
+- [User Experience/UX](#user-experienceux)
+  - [Target Audience](#target-audience)
+  - [User Stories](#user-stories)
+    - [New Visitor Goals](#new-visitor-goals)
+    - [Existing Visitor Goals](#existing-visitor-goals)
+- [Design Choices](#design-choices)
+  - [Colour Scheme](#colour-scheme)
+  - [Typography](#typography)
+  - [Logo and Favicon](#logo-and-favicon)
+  - [Wireframes](#wireframes)
+  - [Flow Diagram](#flow-diagram)
+  - [Database Plan](#database-plan)
+- [Features](#features)
+  - [Registration](#registration)
+  - [Future Features](#future-features)
+  - [Features Not Included](#features-not-included)
+- [Technologies Used](#technologies-used)
+- [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
+- [Agile](#agile)
+- [Testing](#testing)
+  - [Manual Testing](#manual-testing)
+  - [User](#user)
+  - [Bugs](#bugs)
+  - [Lighthouse](#lighthouse)
+  - [Validation Testing](#validation-testing)
+    - [HTML \& CSS](#html--css)
+  - [Python Testing](#python-testing)
+  - [Deployment](#deployment)
+    - [Github Deployment](#github-deployment)
+    - [Creating a Fork or Copying](#creating-a-fork-or-copying)
+    - [Clone](#clone)
+    - [Repository deployment via Heroku](#repository-deployment-via-heroku)
+    - [Deployment of the app](#deployment-of-the-app)
+  - [Credits](#credits)
+  - [Media](#media)
+  - [Acknowledgments and Thanks](#acknowledgments-and-thanks)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+___
