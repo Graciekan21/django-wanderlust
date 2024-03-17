@@ -57,3 +57,21 @@ Link to live site - [/](/)
   - [Acknowledgments and Thanks](#acknowledgments-and-thanks)
 
 ___
+
+## Site Objectives
+
+The main objective of this project was to design and create a blog site that showcases my growing understanding of the libraries and frameworks available to developers. Specifically, the three main objectives were:
+
+- ### Create a responsive, readable,  and clean  front end
+
+I aimed to develop a front end that is readable, clean, and responsive. My goal was to ensure the site is easily accessible and intuitively navigable for users. To achieve this, I utilized Django and Bootstrap to design and style the front end.
+
+- ### Utilize the existing backend functionality
+
+Leverage the functionality provided by the backend framework, enabling users to create profiles, comment on any blog posts within the site, and delete their own comments if desired.
+
+- ### Store project data on an external cloud database
+
+Store project data on an external cloud database. I utilized ElephantSQL to host the PostgreSQL database for this project.
+
+___
