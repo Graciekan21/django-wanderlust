@@ -1,4 +1,4 @@
-# WANDERLUST Blog!
+# WANDERLUST Blog
  
 ### Top 5 Must-Visit Destinations To Zanzibar
 
