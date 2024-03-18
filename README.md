@@ -1,8 +1,8 @@
-# WANDERLUST Blog
+# WANDERLUST 
  
 ### Top 5 Must-Visit Destinations To Zanzibar
 
-![Wanderlust Bolg](documentation/images/)
+![Wanderlust](documentation/images/)
 
 Portfolio 4 Projects for Code Institute's Diploma in Full Stack Software Development.
 ___
@@ -15,7 +15,7 @@ Link to live site - [/](/)
 
 ## CONTENTS
 
-- [Wanderlust Bolg](#wanderlust-blog)
+- [Wanderlust](#wanderlust)
     - [Top 5 Must-Visit Destinations To Zanzibar](#Top-5-Must-Visit-Destinations-To-Zanzibar)
   - [CONTENTS](#contents)
   - [Site Objectives](#site-objectives)
