@@ -4,8 +4,7 @@ from django.views.generic import CreateView, UpdateView
 from django.views.generic.edit import DeleteView
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
-#from .forms import CommentForm, PostForm, EditPostForm
-from django.urls import reverse, reverse_lazy
+
   
     
 class PostList(generic.ListView):
@@ -13,9 +12,15 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
+    
 
 def home(request):
     return render(
         request, 
         'index.html'
+        )
+def update_post(request):
+    return render(
+        request, 
+        'update_post.html'
         )
