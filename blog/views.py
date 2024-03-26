@@ -6,7 +6,10 @@ from django.http import HttpResponseRedirect
 from .models import Post, Comment
 
   
-    
+   # Function based category view
+# CODE CREDIT - code institute - Walk through project (I think there fore i blog)
+
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
