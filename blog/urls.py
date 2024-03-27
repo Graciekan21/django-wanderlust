@@ -4,5 +4,5 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
-    path('update_post',views.update_post,name='update_post')
+    path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
 ]
