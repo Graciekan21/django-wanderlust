@@ -75,3 +75,35 @@ Leverage the functionality provided by the backend framework, enabling users to 
 Store project data on an external cloud database. I utilized ElephantSQL to host the PostgreSQL database for this project.
 
 ___
+
+# User Experience/UX
+
+## Target Audience
+
+- Travelers who are interested in traveling, especially to the best places in African countries.
+
+## User Stories
+
+### New Visitor Goals
+
+- To comprehend the purpose and content of the site.
+- To learn how to navigate the site.
+- To establish an account and interact with the site, as well as with other users and the site owner.
+
+### Existing Visitor Goals
+
+- Sign in and sign out of their account.
+- Review blog posts and comments on each post.
+- Contribute their own comments on blog posts on the site to interact with the site owner and other users.
+
+___
+
+# Design Choices
+
+## Colour Scheme
+
+The project's color scheme was derived from the colors featured in Code Institute's 'I think therefore I blog' walkthrough module. However, I have made numerous adjustments and enhancements to the styling and colors to align with my objectives. The scheme leans towards neutrality, with brighter colors reserved for actionable elements like buttons and links to facilitate navigation and site interaction.
+
+## Typography
+
+## Logo and Favicon
