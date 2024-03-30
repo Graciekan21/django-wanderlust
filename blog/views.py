@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from .models import Post
+from .forms import CommentForm
 
   
    # Function based category view
@@ -27,9 +28,11 @@ class PostDetail(View):
         return render(
             request,
             "post_detail.html",
-            {
+           {
                 "post": post,
                 "comments": comments,
-                "liked": liked
+                "commented": False,
+                "liked": liked,
+                "comment_form": CommentForm()
             },
-)
+        )
