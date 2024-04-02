@@ -107,3 +107,77 @@ The project's color scheme was derived from the colors featured in Code Institut
 ## Typography
 
 ## Logo and Favicon
+
+The logo was crafted utilizing an online logo creator - []()
+
+## Wireframes
+
+- Mobile Homepage Wireframe
+
+![Mobile Homepage Wireframe](documentation/wireframes/mobile_homepage_wireframe.png)
+
+- Mobile Post Detail Wireframe
+
+![Mobile Post Detail Wireframe](documentation/wireframes/mobile_post_detail_wireframe.png)
+
+- Desktop Homepage Wireframe
+
+![Desktop Homepage Wireframe](documentation/wireframes/desktop_homepage_wireframe.png)
+
+- Desktop Post Detail Wireframe
+
+![Desktop Post Detail Wireframe](documentation/wireframes/desktop_postdetail_wireframe.png)
+
+## Flow Diagram
+
+Here is a diagram illustrating the potential flow through the site. It comprises two sections: on the left, it depicts the Admin, and on the right, it represents a site user.
+
+![Site Flow Diagram](documentation/diagrams/site_flow_diagram.png)
+
+## Database Plan
+
+The database plan is relatively straightforward, outlining the stored information, data types, and identifying primary or foreign keys where relevant.
+
+![Database plan](documentation/diagrams/database_plan.png)
+
+# Features
+
+## Registration
+
+The user can create an account
+
+![Create an Account](documentation/images/create_account.png)
+
+View Blog Posts on Home Page
+
+![View Blog Posts on Home Page](documentation/images/home.png)
+
+Browse by Post Category
+
+![Browse by Post Category](documentation/images/browse_by_category.png)
+
+Comment on Blog Posts.
+
+*Also depicted here is the trashcan icon, which enables users to delete their own comments if they choose to do so.*
+
+![Comment on Blog Posts](documentation/images/commenting.png)
+
+## Future Features
+
+- Incorporating an option for users to edit their comments.
+- Implementing a profile page for users to upload profile pictures and edit personal information.
+
+## Features Not Included
+
+Including an option for users to upload photos within comments.
+
+
+
+
+
+
+
+
+
+
+
