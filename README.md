@@ -172,6 +172,21 @@ Comment on Blog Posts.
 Including an option for users to upload photos within comments.
 
 
+___
+
+# Technologies Used
+
+Here are the technologies used to build this project:
+
+- [Gitpod](https://gitpod.io/) To develop and construct this project.
+- [Github](https://github.com) To host and manage the data storage for the site.
+- [Gitpod](https://www.codeanywhere.com) The Integrated Development Environment (IDE) used for building the site.
+- [PEP8 Validator](https://pep8ci.herokuapp.com/) A tool utilized to check Python code for errors.
+- [ElephandSQL](https://www.elephantsql.com/) A platform employed to store a PostgreSQL database.
+- [Cloudinary](https://cloudinary.com/) Utilized as cloud storage for images uploaded as part of the blog posts.
+- [Heroku](https://id.heroku.com/) Deployed the project.
+
+
 
 
 
