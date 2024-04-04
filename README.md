@@ -186,6 +186,30 @@ Here are the technologies used to build this project:
 - [Cloudinary](https://cloudinary.com/) Utilized as cloud storage for images uploaded as part of the blog posts.
 - [Heroku](https://id.heroku.com/) Deployed the project.
 
+# Programming Languages, Frameworks and Libraries Used
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [Django](https://www.djangoproject.com/)
+- [Bootstrap](https://getbootstrap.com/)
+
+# Agile
+
+The project was designed using Agile methodology, leveraging the Project Board and Issues sections in GitHub.
+
+
+- [Project Board](https://github.com/users/markdaniel1982/projects/4/views/1)
+
+# Testing
+
+During the project, I conducted testing for functionality and styling issues after building each section or Function/Model. Corrections or fixes were made before proceeding. Additionally, I enlisted friends to test the site by signing up, adding, and deleting comments using various devices and platforms (IOS, Android, Mobile, Tablet, etc.), and they reported any encountered issues with functionality or styling.
+
+## Manual Testing
+
+*For any failures, a more detailed description is provided below the table*
+
+
 
 
 
