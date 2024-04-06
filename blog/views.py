@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import *
 
   
    # Function based category view
@@ -79,4 +79,16 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+class PostView(View):
+    model = Post
+    form_class = PostForm
+    template_name = 'post.html'
+    def get(self, request, slug=None, *args, **kwargs):
+        return render(
+            request,
+            "post.html",
+            {"form":PostForm()},
+        )
+
 
