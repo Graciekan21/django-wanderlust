@@ -90,5 +90,35 @@ class PostView(View):
             "post.html",
             {"form":PostForm()},
         )
+    
+    def post(self, request, slug=None, *args, **kwargs):
+
+        queryset = Post.objects.filter(status=1)
+        #comments = post.comments.filter(approved=True).order_by("-created_on")            
+        image = request.FILES['featured_image']
+        
+        # Upload image to Cloudinary
+        result = upload(image, use_filename=True)
+        
+        # Handle success or error response
+        if 'url' in result:
+            cloudinary_url = result['url']
+        else:
+            return render(request, 'error.html', {'error_message': result.get('error', 'Unknown error')})
+
+        post_form = PostForm(data=request.POST)
+        if post_form.is_valid():
+            comment_form.instance.featured_image= cloudinary_url
+            mypost = post_form.save(commit=False)
+            
+            mypost.save()
+        else:
+            post_form = PostForm()
+
+        return render(
+            request,
+            "post.html",
+            {"form":PostForm()},
+        )
 
 

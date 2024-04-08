@@ -6,8 +6,10 @@ from django.urls import reverse
 STATUS = ((0, "Draft"), (1, "Published"))
 
 class Category(models.Model):
-    name = models.CharField(max_length=200, unique=True)
-
+    name_1 = models.CharField(max_length=200, unique=True)
+    class Meta:
+         ordering = ["-name_1"]
+categories = Category.objects.all().values_list('name_1', 'name_1')
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -19,8 +21,8 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=1)
     likes = models.ManyToManyField(
-        User, related_name='blogpost_like', blank=True)
-    category = models.CharField(max_length=255, default='wanderlust')
+    User, related_name='blogpost_like', blank=True)
+    category = models.TextField(choices=categories, default=1)
 
     class Meta:
         ordering = ["-created_on"]

@@ -2,7 +2,7 @@ from .models import *
 from django import forms
 from crispy_forms.helper import FormHelper
 
-choices =Category.objects.all().values_list('name', 'name')
+choices =Category.objects.all().values_list('name_1', 'name_1')
 
 choice_list = []
 for item in choices:
