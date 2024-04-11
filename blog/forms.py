@@ -1,7 +1,7 @@
 from .models import *
 from django import forms
 from crispy_forms.helper import FormHelper
-
+from django.shortcuts import get_object_or_404, reverse
 choices =Category.objects.all().values_list('name_1', 'name_1')
 
 choice_list = []
@@ -34,22 +34,4 @@ class PostForm(forms.ModelForm):
                 'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
             'status': forms.Select(attrs={'class': 'form-control'})
-        }
-
-
-class EditPostForm(forms.ModelForm):
-    class Meta:
-        model = Post
-        fields = (
-            'category',
-            'featured_image',
-            'content',
-        )
-
-        widgets = {
-            'category': forms.Select(choices=choices, attrs={
-                'class': 'form-control'}),
-            'featured_image': forms.ClearableFileInput(attrs={
-                'class': 'form-control'}),
-            'content': forms.Textarea(attrs={'class': 'form-control'}),
         }

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Edit Blog Post{% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% if user.is_authenticated %}
+<h1>Edit Post</h1>
+<div class="row add-post-form">
+    <div class="mx-auto col-10 col-md-8 col-lg-6">
+        <div class="form-group">
+            <div class="col-10">
+                {% if msg %}
+                    <strong class="text-danger">{{msg}}</strong>
+                {% endif %}
+                <form class="d-inline" action="" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="title" placeholder="Title" required value="{{post.title}}">
+                    <input type="text" name="slug" placeholder="Slug" required value="{{post.slug}}">
+                    <select name="category" required>
+                        {%for cat in categories %}
+                            {% if cat.name_1 in post.category %}
+                            <option value="{{cat.name_1}}" selected>{{cat.name_1}}</option>
+                            {% else %}
+                            <option value="{{cat.name_1}}" >{{cat.name_1}}</option>
+                            {% endif %}
+                        {%endfor%}
+                    </select>
+                    <input type="file" accept="image/*" name="featured_image" >
+                    <img src="{{post.featured_image.url}}" title="Current Image" height="50px" width="50px">
+                    <textarea name="content" placeholder="Content" required cols="100" rows="10">{{post.content|safe|escape|linebreaksbr}}</textarea>
+                    <input type="submit" class="form-control btn btn-success" value="Post">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="container">
+    <h1>Admin priviledges required!</h1><br><br>
+    click <a href="{% url 'admin' %}"><strong>Login</strong></a>
+</div>
+{% endif %}
+
+{% endblock content %}

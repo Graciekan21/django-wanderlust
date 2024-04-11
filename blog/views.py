@@ -3,7 +3,8 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import *
-
+import cloudinary
+from cloudinary.uploader import upload
   
    # Function based category view
 # CODE CREDIT - code institute - Walk through project (I think there fore i blog)
@@ -15,6 +16,72 @@ class PostList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 6
     
+class PostDetailEdit(View):
+
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by("-created_on")
+        categories = Category.objects.all()
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        return render(
+            request,
+            "update_post.html",
+            {    
+                "is_post_user":(request.user.id==post.author.id),
+                "post": post,
+                "comments": comments,
+                "commented": False,
+                "liked": liked,
+                "categories":categories,
+                "comment_form": CommentForm()
+            },
+        )
+
+    def post(self, request, slug=None, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        categories = Category.objects.all()
+        if request.POST['featured_image']!="":
+            try:
+                image = request.POST['featured_image']
+                # Upload image to Cloudinary
+                result = upload(image, use_filename=True)
+                
+                # Handle success or error response
+                if 'url' in result:
+                    cloudinary_url = result['url']
+                else:
+                    return render(request, 'error.html', {'error_message': result.get('error', 'Unknown error')})
+            except:
+                cloudinary_url = "https://res.cloudinary.com/damp5dgzr/image/upload/v1712097422/dbb0ysf3wukulyemhmey.jpg"
+            
+            
+
+        post_form = PostForm(data=request.POST)
+        if post_form.is_valid():
+            post_form.featured_image= cloudinary_url
+            mypost = post_form.save(commit=False)
+            mypost.save()
+            msg="Updated Successfuly"
+        else:
+            post_form = PostForm()
+            msg="Invalid Input!"
+
+        return render(
+            request,
+            "update_post.html",
+            {   
+                "msg":msg,
+                "is_post_user":(request.user.id==post.author.id),
+                "post": post,
+                "categories":categories,
+                
+            },
+        )
 
 class PostDetail(View):
 
@@ -29,7 +96,8 @@ class PostDetail(View):
         return render(
             request,
             "post_detail.html",
-           {
+            {    
+                "is_post_user":(request.user.id==post.author.id),
                 "post": post,
                 "comments": comments,
                 "commented": False,
@@ -95,30 +163,34 @@ class PostView(View):
 
         queryset = Post.objects.filter(status=1)
         #comments = post.comments.filter(approved=True).order_by("-created_on")            
-        image = request.FILES['featured_image']
+        try:
+            image = request.POST['featured_image']
+            # Upload image to Cloudinary
+            result = upload(image, use_filename=True)
+            
+            # Handle success or error response
+            if 'url' in result:
+                cloudinary_url = result['url']
+            else:
+                return render(request, 'error.html', {'error_message': result.get('error', 'Unknown error')})
+        except:
+            cloudinary_url = "https://res.cloudinary.com/damp5dgzr/image/upload/v1712097422/dbb0ysf3wukulyemhmey.jpg"
         
-        # Upload image to Cloudinary
-        result = upload(image, use_filename=True)
-        
-        # Handle success or error response
-        if 'url' in result:
-            cloudinary_url = result['url']
-        else:
-            return render(request, 'error.html', {'error_message': result.get('error', 'Unknown error')})
-
         post_form = PostForm(data=request.POST)
         if post_form.is_valid():
-            comment_form.instance.featured_image= cloudinary_url
+            #comment_form.instance.featured_image= cloudinary_url
+            post_form.featured_image= cloudinary_url
             mypost = post_form.save(commit=False)
-            
             mypost.save()
+            msg="Saved Successfully"
         else:
             post_form = PostForm()
+            msg="Invalid Input!"
 
         return render(
             request,
             "post.html",
-            {"form":PostForm()},
+            {"form":PostForm(),"msg":msg},
         )
 
 

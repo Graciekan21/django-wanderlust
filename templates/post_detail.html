@@ -34,9 +34,10 @@
                 <div class="row">
 
                     <div class="col-1">
+                        
                         <strong>
                         {% if user.is_authenticated %}
-                        <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                        <form class="d-inline"  enctype="multipart/form-data" action="{% url 'post_like' post.slug %}" method="POST">
                             {% csrf_token %}
                             {% if likes %}
                             <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
@@ -50,9 +51,6 @@
                         <span class="text-secondary"><i class="far fa-heart"></i></span>
                         {% endif %}
                         </strong>
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <span class="text-secondary">{{ post.number_of_likes }} </span>
-                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
@@ -61,6 +59,20 @@
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
+                        {% if user.is_authenticated %}
+                            <!-- Edit/delete if authenticated -->
+                            {% if is_post_user %}
+                            <div class="col-1">
+                                <strong class="btn btn-dark text-light"><a href="{% url 'post_detail_edit' post.slug  %}"><i class="fa fa-pencil"></i>Edit</a></strong>
+                            </div>    
+                            <div class="col-1">
+                                <strong class="btn btn-dark btn-outline-danger text-light"><a href=""><i class="fa fa-trash"></i>Delete</a></strong>
+                            </div>
+                                
+                            {% else %}
+                            
+                            {% endif %}
+                        {% endif %}
                 </div>
             </div>
         </div>
