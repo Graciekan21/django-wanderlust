@@ -34,7 +34,9 @@
                 <div class="row">
 
                     <div class="col-1">
-                        
+                        {% if msg %}
+                            <strong class="text-danger">{{msg}}</strong>
+                        {% endif %}
                         <strong>
                         {% if user.is_authenticated %}
                         <form class="d-inline"  enctype="multipart/form-data" action="{% url 'post_like' post.slug %}" method="POST">
@@ -66,7 +68,7 @@
                                 <strong class="btn btn-dark text-light"><a href="{% url 'post_detail_edit' post.slug  %}"><i class="fa fa-pencil"></i>Edit</a></strong>
                             </div>    
                             <div class="col-1">
-                                <strong class="btn btn-dark btn-outline-danger text-light"><a href=""><i class="fa fa-trash"></i>Delete</a></strong>
+                                <strong class="btn btn-dark btn-outline-danger text-light"><a href="{% url 'delete_post' post.slug %}"><i class="fa fa-trash"></i>Delete</a></strong>
                             </div>
                                 
                             {% else %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
@@ -37,7 +37,7 @@ class PostDetailEdit(View):
                 "commented": False,
                 "liked": liked,
                 "categories":categories,
-                "comment_form": CommentForm()
+                "form": PostForm(instance=post)
             },
         )
 
@@ -45,47 +45,40 @@ class PostDetailEdit(View):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         categories = Category.objects.all()
-        if request.POST['featured_image']!="":
-            try:
-                image = request.POST['featured_image']
-                # Upload image to Cloudinary
-                result = upload(image, use_filename=True)
-                
-                # Handle success or error response
-                if 'url' in result:
-                    cloudinary_url = result['url']
-                else:
-                    return render(request, 'error.html', {'error_message': result.get('error', 'Unknown error')})
-            except:
-                cloudinary_url = "https://res.cloudinary.com/damp5dgzr/image/upload/v1712097422/dbb0ysf3wukulyemhmey.jpg"
+        #comments = post.comments.filter(approved=True).order_by("-created_on")            
+        try:
+            image = request.POST['featured_image']
+            # Upload image to Cloudinary
+            result = upload(image, use_filename=True)
             
-            
-
-        post_form = PostForm(data=request.POST)
+            # Handle success or error response
+            if 'url' in result:
+                cloudinary_url = result['url']
+            else:
+                return render(request, 'update_post.html', {'msg': result.get('error', 'Unknown error')})
+        except:
+            cloudinary_url = "https://res.cloudinary.com/damp5dgzr/image/upload/v1712097422/dbb0ysf3wukulyemhmey.jpg"
+        
+        post_form = PostForm(data=request.POST,instance=post)
         if post_form.is_valid():
+            #comment_form.instance.featured_image= cloudinary_url
             post_form.featured_image= cloudinary_url
             mypost = post_form.save(commit=False)
             mypost.save()
-            msg="Updated Successfuly"
+            msg="Saved Successfully"
         else:
-            post_form = PostForm()
+            #post_form = PostForm()
             msg="Invalid Input!"
 
         return render(
             request,
             "update_post.html",
-            {   
-                "msg":msg,
-                "is_post_user":(request.user.id==post.author.id),
-                "post": post,
-                "categories":categories,
-                
-            },
+            {"form":post_form,"msg":msg},
         )
 
 class PostDetail(View):
 
-    def get(self, request, slug, *args, **kwargs):
+    def get(self, request, slug=None, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -106,7 +99,7 @@ class PostDetail(View):
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, slug=None, *args, **kwargs):
 
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -147,6 +140,19 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+class DeletePostView(View):
+    def get(self, request, slug=None, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        Post.objects.filter(slug=post.slug).delete()
+        return redirect('home')
+
+"""class DeleteComment(View):
+    def get(self, request, slug=None, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        Post.objects.filter(slug=post.slug).delete()
+        return redirect('home')"""
 
 class PostView(View):
     model = Post
@@ -184,7 +190,7 @@ class PostView(View):
             mypost.save()
             msg="Saved Successfully"
         else:
-            post_form = PostForm()
+            #post_form = PostForm()
             msg="Invalid Input!"
 
         return render(
