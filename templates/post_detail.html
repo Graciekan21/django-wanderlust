@@ -44,7 +44,7 @@
                             {% if likes %}
                             <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
                                 aria-label="unlike this post"><i class="fas fa-heart"></i></button>
-                            {% else%}
+                            {% else %}
                             <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
                                 aria-label="unlike this post"><i class="far fa-heart"></i></button>
                             {% endif %}
@@ -93,14 +93,28 @@
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                        {{ comment.name }}
+                        {{ comment.mycomment.name }}
                         <span class=" text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->
-                            {{ comment.created_on }}
+                            {{ comment.mycomment.created_on }}
                         </span> wrote:
                     </p>
                     <!-- The body of the comment goes before the | -->
-                    {{ comment.body | linebreaks }}
+                    {{ comment.mycomment.body | linebreaks }}
+                    {% if user.is_authenticated %}
+                            <!-- Edit/delete if authenticated -->
+                            {% if comment.is_owner %}
+                            <div class="col-1">
+                                <strong class="btn btn-sm btn-dark text-light"><a href="{% url 'comment_edit' post.slug comment.mycomment.pk %}"><i class="fa fa-pencil"></i>Edit</a></strong>
+                            </div>    
+                            <div class="col-1">
+                                <strong class="btn btn-sm btn-dark btn-outline-danger text-light"><a href="{% url 'comment_delete' post.slug comment.mycomment.pk %}"><i class="fa fa-trash"></i>Delete</a></strong>
+                            </div>
+                                
+                            {% else %}
+                                
+                            {% endif %}
+                        {% endif %}
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}

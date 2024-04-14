@@ -85,14 +85,19 @@ class PostDetail(View):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-
+        comment_data = []
+        for comment in comments:
+            if comment.username.lower() == request.user.username.lower():
+                comment_data.append({'mycomment': comment, 'is_owner': True})
+            else:
+                comment_data.append({'mycomment': comment, 'is_owner': False})
         return render(
             request,
             "post_detail.html",
-            {    
+            {
                 "is_post_user":(request.user.id==post.author.id),
                 "post": post,
-                "comments": comments,
+                "comments": comment_data,
                 "commented": False,
                 "liked": liked,
                 "comment_form": CommentForm()
@@ -110,7 +115,7 @@ class PostDetail(View):
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
+            comment_form.instance.username = request.user.username
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.post = post
@@ -147,12 +152,70 @@ class DeletePostView(View):
         Post.objects.filter(slug=post.slug).delete()
         return redirect('home')
 
-"""class DeleteComment(View):
-    def get(self, request, slug=None, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        Post.objects.filter(slug=post.slug).delete()
-        return redirect('home')"""
+class CommentEdit(View):
+
+    def get(self, request, slug=None, pk=None, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug, status=1)
+        cqs=post.comments.filter( pk=pk)
+        comments = get_object_or_404(cqs)
+        
+        return render(
+            request,
+            "update_comment.html",
+            {
+                "msg":"",
+                "post": post,
+                "comments": comments,
+                "form": CommentForm(instance=comments)
+            },
+        )
+
+    def post(self, request, slug=None, pk=None, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug, status=1)
+        cqs=post.comments.filter( pk=pk)
+        comments = get_object_or_404(cqs)
+        comment_form = CommentForm(data=request.POST,instance=comments)
+        if comment_form.is_valid():
+            mycomment = comment_form.save(commit=False)
+            mycomment.save()
+            msg="Saved Successfully"
+        else:
+            msg="Invalid Input!"
+
+        return render(
+            request,
+            "update_comment.html",
+            {"form":comment_form,"msg":msg},
+        )
+
+class CommentDeleteView(View):
+    def get(self, request, slug=None,pk=None, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug, status=1)
+        cqs=post.comments.filter( pk=pk)
+        comment = get_object_or_404(cqs)
+        if comment.delete():
+            msg="Comment Deleted Successfully"
+        else:
+            msg="Comment Deletion Failed!"
+        comments = post.comments.filter(approved=True).order_by("-created_on")
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
+            
+        return render(
+            request,
+            "post_detail.html",
+            {    
+                "is_post_user":(request.user.id==post.author.id),
+                "msg":msg,
+                "post": post,
+                "comments": comments,
+                "commented": False,
+                "liked": liked,
+                "comment_form": CommentForm()
+            },
+        )
+        
 
 class PostView(View):
     model = Post
