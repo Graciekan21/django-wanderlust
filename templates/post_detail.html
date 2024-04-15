@@ -3,7 +3,7 @@
 
 <div class="masthead">
     <div class="container">
-        <div class="row g-0">
+        <div class="row g-12">
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
@@ -39,23 +39,24 @@
                         {% endif %}
                         <strong>
                         {% if user.is_authenticated %}
-                        <form class="d-inline"  enctype="multipart/form-data" action="{% url 'post_like' post.slug %}" method="POST">
+                        <form class="d-inline" enctype="multipart/form-data" action="{% url 'post_like' post.slug %}" method="POST">
                             {% csrf_token %}
                             {% if likes %}
                             <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
-                                aria-label="unlike this post"><i class="fas fa-heart"></i></button>
+                                aria-label="unlike this post"><i class="fas fa-heart"></i>{{ post.number_of_likes }}</button>
                             {% else %}
                             <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
-                                aria-label="unlike this post"><i class="far fa-heart"></i></button>
+                                aria-label="unlike this post"><i class="far fa-heart"></i>{{ post.number_of_likes }}</button>
                             {% endif %}
                         </form>
                         {% else %}
-                        <span class="text-secondary"><i class="far fa-heart"></i></span>
+                        <span class="text-secondary"><i class="far fa-heart"></i>{{ post.number_of_likes }}</span>
                         {% endif %}
                         </strong>
                     </div>
                     <div class="col-1">
-                        {% with comments.count as total_comments %}
+                        {% with comments_2.count as total_comments %}
+                        
                         <strong class="text-secondary"><i class="far fa-comments"></i>
                             <!-- Our total_comments variable goes before the closing strong tag -->
                             {{ total_comments }}</strong>
@@ -64,11 +65,13 @@
                         {% if user.is_authenticated %}
                             <!-- Edit/delete if authenticated -->
                             {% if is_post_user %}
-                            <div class="col-1">
-                                <strong class="btn btn-dark text-light"><a href="{% url 'post_detail_edit' post.slug  %}"><i class="fa fa-pencil"></i>Edit</a></strong>
-                            </div>    
-                            <div class="col-1">
-                                <strong class="btn btn-dark btn-outline-danger text-light"><a href="{% url 'delete_post' post.slug %}"><i class="fa fa-trash"></i>Delete</a></strong>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-4">
+                                    <strong class="text-light"><a href="{% url 'post_detail_edit' post.slug  %}"><i class="fa fa-pencil"></i>Edit</a></strong>
+                                </div>    
+                                <div class="col-lg-2 col-md-4">
+                                    <strong class="text-danger"><a class="text-danger" href="{% url 'delete_post' post.slug %}"><i class="fa fa-trash"></i>Delete</a></strong>
+                                </div>
                             </div>
                                 
                             {% else %}
@@ -104,11 +107,11 @@
                     {% if user.is_authenticated %}
                             <!-- Edit/delete if authenticated -->
                             {% if comment.is_owner %}
-                            <div class="col-1">
-                                <strong class="btn btn-sm btn-dark text-light"><a href="{% url 'comment_edit' post.slug comment.mycomment.pk %}"><i class="fa fa-pencil"></i>Edit</a></strong>
-                            </div>    
-                            <div class="col-1">
-                                <strong class="btn btn-sm btn-dark btn-outline-danger text-light"><a href="{% url 'comment_delete' post.slug comment.mycomment.pk %}"><i class="fa fa-trash"></i>Delete</a></strong>
+                            <div class="col-3">
+                                <strong class="text-light"><a href="{% url 'comment_edit' post.slug comment.mycomment.pk %}"><i class="fa fa-pencil"></i>Edit</a></strong>
+                            </div>
+                            <div class="col-3">
+                                <strong class="text-danger"><a class="text-danger" href="{% url 'comment_delete' post.slug comment.mycomment.pk %}"><i class="fa fa-trash"></i>Delete</a></strong>
                             </div>
                                 
                             {% else %}

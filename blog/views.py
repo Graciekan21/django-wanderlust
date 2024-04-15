@@ -91,6 +91,7 @@ class PostDetail(View):
                 comment_data.append({'mycomment': comment, 'is_owner': True})
             else:
                 comment_data.append({'mycomment': comment, 'is_owner': False})
+                
         return render(
             request,
             "post_detail.html",
@@ -98,6 +99,7 @@ class PostDetail(View):
                 "is_post_user":(request.user.id==post.author.id),
                 "post": post,
                 "comments": comment_data,
+                "comments_2": comments,
                 "commented": False,
                 "liked": liked,
                 "comment_form": CommentForm()
@@ -143,7 +145,7 @@ class PostLike(View):
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
-
+    
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 class DeletePostView(View):
     def get(self, request, slug=None, *args, **kwargs):
@@ -201,7 +203,7 @@ class CommentDeleteView(View):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-            
+
         return render(
             request,
             "post_detail.html",
