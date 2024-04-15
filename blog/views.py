@@ -9,7 +9,9 @@ from cloudinary.uploader import upload
    # Function based category view
 # CODE CREDIT - code institute - Walk through project (I think there fore i blog)
 
-
+def custom_404_view(request, exception):
+    return render(request, 'post.html', status=404)
+    
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -46,23 +48,11 @@ class PostDetailEdit(View):
         post = get_object_or_404(queryset, slug=slug)
         categories = Category.objects.all()
         #comments = post.comments.filter(approved=True).order_by("-created_on")            
-        try:
-            image = request.POST['featured_image']
-            # Upload image to Cloudinary
-            result = upload(image, use_filename=True)
-            
-            # Handle success or error response
-            if 'url' in result:
-                cloudinary_url = result['url']
-            else:
-                return render(request, 'update_post.html', {'msg': result.get('error', 'Unknown error')})
-        except:
-            cloudinary_url = "https://res.cloudinary.com/damp5dgzr/image/upload/v1712097422/dbb0ysf3wukulyemhmey.jpg"
-        
-        post_form = PostForm(data=request.POST,instance=post)
+        rPost=request.POST.copy()
+        rPost['author']=request.user.id
+        post_form = PostForm( rPost, request.FILES, instance=post)
         if post_form.is_valid():
             #comment_form.instance.featured_image= cloudinary_url
-            post_form.featured_image= cloudinary_url
             mypost = post_form.save(commit=False)
             mypost.save()
             msg="Saved Successfully"
@@ -197,6 +187,7 @@ class CommentDeleteView(View):
         comment = get_object_or_404(cqs)
         if comment.delete():
             msg="Comment Deleted Successfully"
+            return redirect('post_detail',slug)
         else:
             msg="Comment Deletion Failed!"
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -234,23 +225,11 @@ class PostView(View):
 
         queryset = Post.objects.filter(status=1)
         #comments = post.comments.filter(approved=True).order_by("-created_on")            
-        try:
-            image = request.POST['featured_image']
-            # Upload image to Cloudinary
-            result = upload(image, use_filename=True)
-            
-            # Handle success or error response
-            if 'url' in result:
-                cloudinary_url = result['url']
-            else:
-                return render(request, 'error.html', {'error_message': result.get('error', 'Unknown error')})
-        except:
-            cloudinary_url = "https://res.cloudinary.com/damp5dgzr/image/upload/v1712097422/dbb0ysf3wukulyemhmey.jpg"
-        
-        post_form = PostForm(data=request.POST)
+        rPost=request.POST.copy()
+        rPost['author']=request.user.id
+        post_form = PostForm( rPost, request.FILES)
+        #post_form.author.username=request.user.username
         if post_form.is_valid():
-            #comment_form.instance.featured_image= cloudinary_url
-            post_form.featured_image= cloudinary_url
             mypost = post_form.save(commit=False)
             mypost.save()
             msg="Saved Successfully"
@@ -261,7 +240,7 @@ class PostView(View):
         return render(
             request,
             "post.html",
-            {"form":PostForm(),"msg":msg},
+            {"form":post_form,"msg":msg},
         )
 
 

@@ -1,6 +1,10 @@
 from . import views
 from django.urls import path
 from .views import *
+from django.conf.urls import handler404
+
+handler404 = 'blog.views.custom_404_view'  # Specify the view that renders the custom 404 page
+
 
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
@@ -10,8 +14,5 @@ urlpatterns = [
     path('comment/edit/<slug:slug>/<int:pk>/', views.CommentEdit.as_view(), name='comment_edit'),
     path('comment/delete/<slug:slug>/<int:pk>/', views.CommentDeleteView.as_view(), name='comment_delete'),
     path('post.html/', views.PostView.as_view(), name='post'),
-    #path('add_category.html/', views.AddCategoryView.as_view(), name='add_category'),
-    #path('<slug:slug>/update/', views.EditPostView.as_view(), name='update_post'),
     path('delete/<slug:slug>/', views.DeletePostView.as_view(), name='delete_post'),
-    #path('category/<str:cats>/', CategoryView, name='category'),
 ]

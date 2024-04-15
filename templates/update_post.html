@@ -11,7 +11,7 @@
                 {% if msg %}
                     <div><strong class="text-danger">{{msg}}</strong></div>
                 {% endif %}
-                <form class="d-block container" style="background-color: #05668D;color:#FFFFFF" action="" method="POST">
+                <form class="d-block container" enctype="multipart/form-data" style="background-color: #05668D;color:#FFFFFF" action="" method="POST">
                     {% csrf_token %}
                     {{form}}
                     <input type="submit" class="form-control btn btn-success" value="Update">

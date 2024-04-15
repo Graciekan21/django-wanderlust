@@ -27,7 +27,7 @@ class PostForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'slug': forms.TextInput(attrs={'class': 'form-control'}),
-            'author': forms.Select(attrs={'class': 'form-control'}),
+            'author': forms.TextInput(attrs={'class': 'form-control','hidden':'hidden','value':'0'}),
             'category': forms.Select(choices=choice_list, attrs={
                 'class': 'form-control'}),
             'featured_image': forms.ClearableFileInput(attrs={
