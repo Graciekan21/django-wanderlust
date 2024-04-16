@@ -72,7 +72,7 @@ li {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #23BBBB;
+    background-color: #23BBBB;;
 }
 
 .author {
@@ -136,20 +136,31 @@ li {
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #427AA1;
     color: #fff;
+}
+
+.navbar-link {
+
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #427AA1;
 }
 
 .link {
-    color: #23BBBB;
+    color: #427AA1;
     text-decoration: none;
 }
+
+/* Social Links */
+#social-link {
+    color: #fff;
+    text-decoration: none;
+}
+
 
 .link:hover,
 .link:active {
