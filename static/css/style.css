@@ -17,6 +17,27 @@ body {
     color: #4A4A4F;
 }
 
+li {
+    display: contents;
+}
+
+.navbar-brand {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+    white-space: nowrap;
+}
+
+#navlogo {
+    height: 100%;
+    width: auto;
+}
+
+.text-light {
+    color: #f8f9fa !important;
+}
+
 .red-o {
     color: #E84610;
 }
