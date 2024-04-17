@@ -1,7 +1,18 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-
+<div id="intro-container">
+    <p class="introduction h-100 d-flex align-items-center justify-content-center">
+        Welcome to my blog. Here I will post mainly about fishing, but occasionally about other things too.
+        <br><br>
+        If you want to filter my posts by category, then click on the category displayed in the top right of each
+        picture to display all posts within that category!
+        <br><br>
+        Thanks for popping in.
+    </p>
+</div>
+<hr>
 <div class="container-fluid">
     <div class="row">
 
@@ -28,7 +39,6 @@
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <!--<p class="card-text">{{ post.except }}</p>-->
                             </a>
-                            <hr />
                             <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
                         </div>
@@ -41,6 +51,7 @@
                 {% endfor %}
 
             </div>
+            <hr>
         </div>
     </div>
     {% if is_paginated %}
