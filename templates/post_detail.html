@@ -1,21 +1,35 @@
 {% extends 'base.html' %} {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="masthead">
+<div class="">
     <div class="container">
         <div class="row g-12">
-            <div class="col-md-6 masthead-text">
+            <div class=" d-none d-md-block col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                <p class="post-subtitle bg-dark text-light">{{ post.author }} | {{ post.created_on }}</p>
+            </div>
+            <div class="d-block d-md-none">
+                <!-- Post title goes in these h1 tags -->
+                <h1 class="post-title">{{ post.title }}</h1>
+                <!-- Post author goes before the | the post's created date goes after -->
+                <p class="post-subtitle bg-dark text-light">{{ post.author }} | {{ post.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                <img class="card-img-top" src="https://www.pexels.com/photo/concrete-houses-covered-with-leaves-210017/" alt="Placeholder image" class="w-100 h-5">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img src=" {{ post.featured_image.url }}" alt="Post Image" class="w-100 h-5">
+                {% endif %}
+            </div>
+            <div class="d-block d-md-none col-sm-12 h-5">
+                <!-- The featured image URL goes in the src attribute -->
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="https://www.pexels.com/photo/concrete-houses-covered-with-leaves-210017/" alt="Post Image" class="w-100 h-5">
+                {% else %}
+                <img src=" {{ post.featured_image.url }}" alt="Post Image" class="w-100 h-5">
                 {% endif %}
             </div>
         </div>
@@ -67,10 +81,10 @@
                             {% if is_post_user %}
                             <div class="row">
                                 <div class="col-lg-2 col-md-4">
-                                    <strong class="text-light"><a href="{% url 'post_detail_edit' post.slug  %}"><i class="fa fa-pencil"></i>Edit</a></strong>
+                                    <strong class="text-light"><a class="bg-dark text-light" href="{% url 'post_detail_edit' post.slug  %}"><i class="fa fa-pencil"></i>Edit</a></strong>
                                 </div>    
                                 <div class="col-lg-2 col-md-4">
-                                    <strong class="text-danger"><a class="text-danger" onclick="confirm('Are you sure you want to delete this Post?') ? window.open('{% url 'delete_post' post.slug %}') : console.log('');"><i class="fa fa-trash"></i>Delete</a></strong>
+                                    <strong class="text-danger"><a class="bg-light text-dark" href="javascript:void(0);" onclick="confirm('Are you sure you want to delete this Post?') ? window.open('{% url 'delete_post' post.slug %}') : console.log('');"><i class="fa fa-trash"></i>Delete</a></strong>
                                 </div>
                             </div>
                                 
@@ -89,7 +103,7 @@
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Comments:</h3>
+            <h2>Comments:</h2>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
@@ -97,7 +111,7 @@
                     <p class="font-weight-bold">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                         {{ comment.mycomment.name }}
-                        <span class=" text-muted font-weight-normal">
+                        <span class="font-weight-normal">
                             <!-- The comment's created date goes here -->
                             {{ comment.mycomment.created_on }}
                         </span> wrote:
@@ -108,10 +122,10 @@
                             <!-- Edit/delete if authenticated -->
                             {% if comment.is_owner %}
                             <div class="col-3">
-                                <strong class="text-light"><a href="{% url 'comment_edit' post.slug comment.mycomment.pk %}"><i class="fa fa-pencil"></i>Edit</a></strong>
+                                <strong class="text-light"><a class="bg-dark text-light" href="{% url 'comment_edit' post.slug comment.mycomment.pk %}"><i class="fa fa-pencil"></i>Edit</a></strong>
                             </div>
                             <div class="col-3">
-                                <strong class="text-danger"><a class="text-danger" onclick="confirm('Are you sure you want to delete this Comment?') ? window.open('{% url 'comment_delete' post.slug comment.mycomment.pk %}') : console.log('');"><i class="fa fa-trash"></i>Delete</a></strong>
+                                <strong class="text-danger"><a class="bg-light text-dark" onclick="confirm('Are you sure you want to delete this Comment?') ? window.open('{% url 'comment_delete' post.slug comment.mycomment.pk %}') : console.log('');"><i class="fa fa-trash"></i>Delete</a></strong>
                             </div>
                                 
                             {% else %}
@@ -142,7 +156,7 @@
                     <button type="submit" class="btn btn-signup btn-success btn-lg">Submit</button>
                 </form>
                 {% else %}
-                <h3>Please <a href="{% url 'account_login' %}?next={{request.path}}">login</a> in to leave a comment
+                <h3>Please <a class="bg-dark text-light" href="{% url 'account_login' %}?next={{request.path}}">login</a> in to leave a comment
                 </h3>
                 {% endif %}
                 
