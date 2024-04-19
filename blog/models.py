@@ -1,4 +1,3 @@
-
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
@@ -28,7 +27,8 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=1)
-    likes = models.ManyToManyField(User, related_name="blogpost_like", blank=True)
+   likes = models.ManyToManyField(User, 
+       related_name="blogpost_like", blank=True)    
     category = models.TextField(choices=categories, default=1)
 
     class Meta:
@@ -54,7 +54,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)
     username = models.CharField(max_length=80, default="admin")
     body = models.TextField()

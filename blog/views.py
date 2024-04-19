@@ -7,7 +7,7 @@ import cloudinary
 from cloudinary.uploader import upload
 
 # Function based category view
-# CODE CREDIT - code institute - Walk through project (I think there fore i blog)
+# CODE CREDIT - code institute Walk through project
 
 
 def custom_404_view(request, exception):
@@ -49,7 +49,7 @@ class PostDetailEdit(View):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         categories = Category.objects.all()
-        # comments = post.comments.filter(approved=True).order_by("-created_on")
+    # comments = post.comments.filter(approved=True).order_by("-created_on")
         rPost = request.POST.copy()
         rPost["author"] = request.user.id
         post_form = PostForm(rPost, request.FILES, instance=post)
@@ -230,7 +230,7 @@ class PostView(View):
     def post(self, request, slug=None, *args, **kwargs):
 
         queryset = Post.objects.filter(status=1)
-        # comments = post.comments.filter(approved=True).order_by("-created_on")
+# comments = post.comments.filter(approved=True).order_by("-created_on")
         rPost = request.POST.copy()
         rPost["author"] = request.user.id
         post_form = PostForm(rPost, request.FILES)

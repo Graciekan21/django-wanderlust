@@ -28,17 +28,7 @@ li {
     font-size: 1.25rem;
     white-space: nowrap;
 }
-
-.logotext {
-    color: #4A4A4F;
-    font-family: "Playfair Display", serif;
-    font-size: 6vw;
-    position: relative;
-    top: 14px;
-    right: 10%;
-}
-
-
+  
 #navlogo {
     height: 150%;
     width: auto;
