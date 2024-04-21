@@ -25,7 +25,7 @@ class PostDetailEdit(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
+        comments = post.comments.filter().order_by("-created_on")
         categories = Category.objects.all()
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
@@ -65,7 +65,7 @@ class PostDetailEdit(View):
         return render(
             request,
             "update_post.html",
-            {"form": post_form, "msg": msg},
+            {"form": post_form, "msg": msg,'post':post},
         )
 
 
@@ -73,7 +73,7 @@ class PostDetail(View):
     def get(self, request, slug=None, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
+        comments = post.comments.filter().order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -83,7 +83,7 @@ class PostDetail(View):
                 comment_data.append({"mycomment": comment, "is_owner": True})
             else:
                 comment_data.append({"mycomment": comment, "is_owner": False})
-
+        
         return render(
             request,
             "post_detail.html",
@@ -102,7 +102,7 @@ class PostDetail(View):
 
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
+        comments = post.comments.filter().order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -116,13 +116,20 @@ class PostDetail(View):
             comment.save()
         else:
             comment_form = CommentForm()
+        
+        comment_data = []
+        for comment in comments:
+            if comment.username.lower() == request.user.username.lower():
+                comment_data.append({"mycomment": comment, "is_owner": True})
+            else:
+                comment_data.append({"mycomment": comment, "is_owner": False})
 
         return render(
             request,
             "post_detail.html",
             {
                 "post": post,
-                "comments": comments,
+                "comments": comment_data,
                 "commented": True,
                 "comment_form": comment_form,
                 "liked": liked,
@@ -181,7 +188,7 @@ class CommentEdit(View):
         return render(
             request,
             "update_comment.html",
-            {"form": comment_form, "msg": msg},
+            {"form": comment_form, "msg": msg,'post':post},
         )
 
 
@@ -195,7 +202,7 @@ class CommentDeleteView(View):
             return redirect("post_detail", slug)
         else:
             msg = "Comment Deletion Failed!"
-        comments = post.comments.filter(approved=True).order_by("-created_on")
+        comments = post.comments.filter().order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True

@@ -7,6 +7,7 @@
 <div class="row add-post-form" style="background-image: url('https://www.pexels.com/photo/concrete-houses-covered-with-leaves-210017/default.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
     <div class="mx-auto col-10 col-md-8 col-lg-6">
         <div class="form-group">
+            <a class="link bg-dark text-light" href="{% url 'post_detail' post.slug %}">Return to Post</a>
             <div class="col-10">
                 {% if msg %}
                     <div><strong class="text-danger">{{msg}}</strong></div>

@@ -8,10 +8,8 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Category(models.Model):
     name_1 = models.CharField(max_length=200, unique=True)
-
-
-class Meta:
-    ordering = ["-name_1"]
+    class Meta:
+        ordering = ["-name_1"]
 
 
 categories = Category.objects.all().values_list("name_1", "name_1")
@@ -32,8 +30,8 @@ class Post(models.Model):
     category = models.TextField(choices=categories, default=1)
 
 
-class Meta:
-    ordering = ["-created_on"]
+    class Meta:
+        ordering = ["-created_on"]
 
     def __str__(self):
         return self.title
@@ -62,10 +60,8 @@ class Comment(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-
-
-class Meta:
-    ordering = ["created_on"]
+    class Meta:
+        ordering = ["created_on"]
 
 
 def __str__(self):
