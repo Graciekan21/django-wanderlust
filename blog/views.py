@@ -49,7 +49,7 @@ class PostDetailEdit(View):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         categories = Category.objects.all()
-    # comments = post.comments.filter(approved=True).order_by("-created_on")
+# comments = post.comments.filter(approved=True).order_by("-created_on")
         rPost = request.POST.copy()
         rPost["author"] = request.user.id
         post_form = PostForm(rPost, request.FILES, instance=post)
@@ -65,7 +65,7 @@ class PostDetailEdit(View):
         return render(
             request,
             "update_post.html",
-            {"form": post_form, "msg": msg,'post':post},
+            {"form": post_form, "msg": msg, "post": post},
         )
 
 
@@ -83,7 +83,7 @@ class PostDetail(View):
                 comment_data.append({"mycomment": comment, "is_owner": True})
             else:
                 comment_data.append({"mycomment": comment, "is_owner": False})
-        
+
         return render(
             request,
             "post_detail.html",
@@ -116,7 +116,7 @@ class PostDetail(View):
             comment.save()
         else:
             comment_form = CommentForm()
-        
+
         comment_data = []
         for comment in comments:
             if comment.username.lower() == request.user.username.lower():
@@ -188,7 +188,7 @@ class CommentEdit(View):
         return render(
             request,
             "update_comment.html",
-            {"form": comment_form, "msg": msg,'post':post},
+            {"form": comment_form, "msg": msg, "post": post},
         )
 
 
