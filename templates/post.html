@@ -9,7 +9,7 @@
         <div class="form-group" style="margin: 20px;padding:px">
             <div class="col-12 bg-light">
                 {% if msg %}
-                    <div><strong class="text-danger">{{msg}}</strong></div>
+                <script>Swal.fire("{{msg}}");</script>
                 {% endif %}
                 <form class="d-block container" enctype="multipart/form-data" style="background-color: #05668D;color:#FFFFFF" action="" method="POST">
                     {% csrf_token %}

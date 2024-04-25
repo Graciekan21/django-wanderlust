@@ -111,10 +111,8 @@ class PostDetail(View):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-            rPost=request.POST.copy()
         rPost=request.POST.copy()
-        rPost["slug"] = request.POST['title']
-        rPost['slug']=re.sub(r'\W+', '',rPost['slug'])
+        
         comment_form = CommentForm(data=rPost)
         if comment_form.is_valid():
             comment_form.instance.username = request.user.username

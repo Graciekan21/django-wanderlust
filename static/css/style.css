@@ -14,6 +14,10 @@ label[for="id_slug"],
 label[for="id_author"] {
     display: none;
 }
+h1{
+    font-family: Roboto, sans-serif;
+    font-size: 1.5rem;
+}
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;

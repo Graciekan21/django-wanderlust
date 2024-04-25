@@ -49,22 +49,26 @@
 
                     <div class="col-1">
                         {% if msg %}
-                            <strong class="text-danger">{{msg}}</strong>
+                        <script>Swal.fire("{{msg}}");</script>
                         {% endif %}
                         <strong>
-                        {% if user.is_authenticated %}
-                        <form class="d-inline" enctype="multipart/form-data" action="{% url 'post_like' post.slug %}" method="POST">
-                            {% csrf_token %}
-                            {% if likes %}
-                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
-                                aria-label="unlike this post"><i class="fas fa-heart"></i>{{ post.number_of_likes }}</button>
-                            {% else %}
-                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
-                                aria-label="unlike this post"><i class="far fa-heart"></i>{{ post.number_of_likes }}</button>
-                            {% endif %}
-                        </form>
-                        {% else %}
+                        {% if user.is_superuser %}
                         <span class="text-secondary"><i class="far fa-heart"></i>{{ post.number_of_likes }}</span>
+                        {% else %}
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" enctype="multipart/form-data" action="{% url 'post_like' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if likes %}
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
+                                    aria-label="unlike this post"><i class="fas fa-heart"></i>{{ post.number_of_likes }}</button>
+                                {% else %}
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
+                                    aria-label="unlike this post"><i class="far fa-heart"></i>{{ post.number_of_likes }}</button>
+                                {% endif %}
+                            </form>
+                            {% else %}
+                            <span class="text-secondary"><i class="far fa-heart"></i>{{ post.number_of_likes }}</span>
+                            {% endif %}
                         {% endif %}
                         </strong>
                     </div>
@@ -142,10 +146,8 @@
             <div class="card-body">
                 <!-- For later -->
                 {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval
-                </div>
-                {% else %}
+                    <script>Swal.fire("Commented Successfully");</script>
+                {% endif %}
                 {% if user.is_authenticated %}
 
                 <h3>Leave a comment:</h3>
@@ -161,7 +163,7 @@
                 {% endif %}
                 
 
-                {% endif %}
+                
             </div>
         </div>
     </div>
