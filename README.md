@@ -106,9 +106,11 @@ The project's color scheme was derived from the colors featured in Code Institut
 
 ## Typography
 
+The primary font utilized is -------, while Tangerine was employed for the main logo text on the navbar.
+
 ## Logo and Favicon
 
-The logo was crafted utilizing an online logo creator - []()
+The logo was crafted utilizing an online logo creator - [Favicon](https://favicon.io/)
 
 ## Wireframes
 
@@ -151,27 +153,23 @@ The user can create an account
 View Blog Posts on Home Page
 
 ![View Blog Posts on Home Page](documentation/images/home.png)
-
-Browse by Post Category
-
-![Browse by Post Category](documentation/images/browse_by_category.png)
-
+ 
 Comment on Blog Posts.
 
 *Also depicted here is the trashcan icon, which enables users to delete their own comments if they choose to do so.*
+*Also, there is an edit icon that allows users to edit their comments if they choose to do so..*
 
 ![Comment on Blog Posts](documentation/images/commenting.png)
 
 ## Future Features
 
-- Incorporating an option for users to edit their comments.
-- Implementing a profile page for users to upload profile pictures and edit personal information.
+- Implementing a profile page for users to upload profile pictures 
 
 ## Features Not Included
 
 Including an option for users to upload photos within comments.
 
-
+---------
 ___
 
 # Technologies Used
@@ -196,10 +194,9 @@ Here are the technologies used to build this project:
 
 # Agile
 
-The project was designed using Agile methodology, leveraging the Project Board and Issues sections in GitHub.
+This project was developed using Agile methodology, making use of the Project Board and Issues sections in GitHub.
 
-
-- [Project Board](https://github.com/users/markdaniel1982/projects/4/views/1)
+- [Project Board](https://github.com/users/Graciekan21/projects/5/views/1)
 
 # Testing
 
@@ -207,7 +204,168 @@ During the project, I conducted testing for functionality and styling issues aft
 
 ## Manual Testing
 
-*For any failures, a more detailed description is provided below the table*
+*For any failures, a more detailed description is provided below the table.*
+
+ADMIN
+| TEST | OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+| Create Blog Post | The post has been successfully created and is now visible | Pass |
+| Edit Blog Post | Post content and category have been successfully updated | Pass |
+| Delete User Comments | Comment successfully deleted | Pass |
+| Delete Blog Post | Post deleted successfully | Pass |
+| Create test posts to verify pagination | Next/Previous Page appears at the bottom of the screen | Pass |
+
+(*) - While testing the ability to edit posts (Limited to Admin only), I had a problem when editing the title and slug of the post. This was due to the URL not being able to find the original slug of the post (because it had been changed during the edit) to route it after the editing was complete. At this stage, I felt the easiest fix was to remove the ability to edit the post title and slug in the browser, but this functionality is still available via the django admin panel.
+
+## User
+
+| TEST | OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+| Create Account | successfully created | Pass |
+| Login | Login Successful | Pass |
+| Logout | Logout Successful | Pass |
+| Read Full Blog Post | PostDetail page loaded successfully | Pass |
+| Leave a comment below the blog post | Comment Successfully Added| Pass |
+| Edit a comment below the blog post | update successfully Added | Pass |
+| Delete Comment | Comment Deleted | Pass |
+| Filter Posts by category | Posts marked as selected category displayed successfully | Pass |
+| Create User Account to check access to restricted pages (add_post, add_category)| Page displayed correct error message, with no access to restricted content | Pass |
+
+(*) See Bugs below
+
+## Bugs
+
+## Lighthouse
+
+The performance scores appear to be low, and I attribute this to the images uploaded for each blog post being hosted on a third-party cloud-based platform.
+
+Mobile
+
+![Lighthouse Mobile Score](documentation/images/lighthouse_mobile.png)
+
+Desktop
+
+![Lighthouse Desktop Score](documentation/images/lighthouse_desktop.png)
+
+## Validation Testing
+
+### HTML & CSS
+
+HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
+
+error -----
+
+![HTML Validation - Descendant Error](documentation/testing_documentation/validation/base.html_button_descendant.png)
+
+Fixed:
+
+## Python Testing
+
+Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
+
+The only issues encountered here were with indentations and the fact that certain lines of text exceeded the 79-character limit, but these have now been resolved.
+
+Python Files Tested:
+
+- models
+- forms
+- views
+- urls
+
+___
+
+## Deployment
+
+### Github Deployment
+
+To store the website, I utilized GitHub for both data storage and version control. Here's how it was done:
+After making any additions, changes, or removals of code, in the terminal within your IDE (I used Gitpod for this project), type:
+- git add 
+- git commit -m "meaningful commit message"
+- git push
+
+The files are now accessible for viewing within your GitHub repository.
+
+### Creating a Fork or Copying
+
+To clone/fork/copy the repository, you click on the "Fork" tab located next to the "Unwatch" tab in the top right corner of the page.
+
+
+### Clone
+
+To create a clone you do the following;
+
+1. Click on the code tab, left of the Gitpod tab
+2. To the right of the repository name, click the clipboard icon
+3. In the IED open GitBash
+4. Change the working directory to the location you prefer
+5. Add Git Clone with the copy of the repository name
+6. Clone has been created
+
+### Repository deployment via Heroku
+
+- On the [Heroku Dashboard](https://dashboard.heroku.com) page, click New and then select Create New App from the drop-down menu.
+- When the next page loads insert the App name and Choose a region. Then click 'Create app'
+- In the settings tab click on Reveal Config Vars and add the key Port and the value 8000. The credentials for this app were:
+
+1. Cloudinary URL
+2. Postgres Database URL
+3. Port (8000)
+
+- Below, click "Add buildpack" and select "Python" first, followed by "Node.js."
+
+### Deployment of the app
+
+- Click on the Deploy tab and select Github-Connect to Github.
+- Enter the repository name and click Search.
+- Choose the repository that holds the correct files and click Connect.
+- A choice is offered between manual or automatic deployment whereby the app is updated when changes are pushed to GitHub.
+- Once the deployment method has been chosen the app will be built and can be launched by clicking the Open app button which should appear below the build information window, alternatively, there is another button located in the top right of the page.
+
+___
+
+## Credits
+
+This project was based on the Code Institute's - I think therefore I blog walkthrough module which provided a standard blog 'base'. From this base I customised a lot of the layout and styling with Bootstrap and custom CSS. I also added a custom model for Category. This allowed me to create a functionality within the site for users to filter the blog posts by a selected category.
+
+I also added several custom Views and Forms to the site, as well as ensuring that all links and desired functionality was working as intended with no errors.
+
+For inspiration and fine-tuning of my code, I referred to John Elder's youtube channel [Codemy](https://www.youtube.com/@Codemycom) where I was able to get a better understanding of how to correctly create this type of product using Django and Bootstrap.
+
+The project guide and the readme layout was based on the example by [Kasia Bogucka - Portfolio Project 4 - The guide to MVP](https://youtu.be/vIv1c6RLBac?si=3pncBJmgvJ0tgBcd ) 
+I want also acknolage My mentor Jubril Akolade, for help me to understand how to structure the readme with[ Sdalsosa- Readme](https://github.com/Sdalsosa/ComposerHub/blob/main/README.md)
+ 
+The wireframe mockups were created using [figma](https://www.figma.com//)
+After finishing, the README file was subjected to a spelling and grammar check using.
+
+ [ChartGPT](https://chartgpt.io/)
+
+___
+
+## Media
+
+For placeholder images when no image is uploaded to a blog post, I have utilized [picsum](https://picsum.photos/) which offers a library of stock images that display as a placeholder.
+ All other content and images are my own.
+
+___
+
+## Acknowledgments and Thanks
+
+Alan, Roo, John, Roman, Rebecca and Sarah at Code Institute's tutor support for the help and guidance with my code-related brain melts.
+
+Rebecca at Code Institute's tutor support for the database reset guidance.
+
+ [CodeInstitute](https://learn.codeinstitute.net/courses/) CodeInstitute
+
+For help with manual testing:
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 
 
 
