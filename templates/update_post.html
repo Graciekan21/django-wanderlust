@@ -3,12 +3,12 @@
 {% block content %}
 {% load crispy_forms_tags %}
 {% if user.is_authenticated %}
-<h1>Edit Post</h1>
+<center><h1>Edit Post</h1></center>
 <div class="row add-post-form" style="background-image: url('https://www.pexels.com/photo/concrete-houses-covered-with-leaves-210017/default.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
     <div class="mx-auto col-10 col-md-8 col-lg-6">
-        <div class="form-group">
+        <div class="form-group" style="margin: 20px;padding:px">
             <a class="link bg-dark text-light" href="{% url 'post_detail' post.slug %}">Return to Post</a>
-            <div class="col-10">
+            <div class="col-12">
                 {% if msg %}
                     <div><strong class="text-danger">{{msg}}</strong></div>
                 {% endif %}

@@ -5,7 +5,8 @@ from .models import Post
 from .forms import *
 import cloudinary
 from cloudinary.uploader import upload
-
+import re
+import random
 # Function based category view
 # CODE CREDIT - code institute Walk through project
 
@@ -52,8 +53,12 @@ class PostDetailEdit(View):
 # comments = post.comments.filter(approved=True).order_by("-created_on")
         rPost = request.POST.copy()
         rPost["author"] = request.user.id
+        rPost=request.POST.copy()
+        rPost["slug"] = request.POST['title']
+        rPost['slug']=re.sub(r'\W+', '',rPost['slug'])
         post_form = PostForm(rPost, request.FILES, instance=post)
         if post_form.is_valid():
+            #post_form.slug=re.sub(r'\W+', '',rPost['slug'])
             # comment_form.instance.featured_image= cloudinary_url
             mypost = post_form.save(commit=False)
             mypost.save()
@@ -106,8 +111,11 @@ class PostDetail(View):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-
-        comment_form = CommentForm(data=request.POST)
+            rPost=request.POST.copy()
+        rPost=request.POST.copy()
+        rPost["slug"] = request.POST['title']
+        rPost['slug']=re.sub(r'\W+', '',rPost['slug'])
+        comment_form = CommentForm(data=rPost)
         if comment_form.is_valid():
             comment_form.instance.username = request.user.username
             comment_form.instance.name = request.user.username
@@ -240,10 +248,13 @@ class PostView(View):
 # comments = post.comments.filter(approved=True).order_by("-created_on")
         rPost = request.POST.copy()
         rPost["author"] = request.user.id
+        rPost["slug"] = request.POST['title']
+        rPost['slug']=re.sub(r'\W+', '',rPost['slug'])
         post_form = PostForm(rPost, request.FILES)
         # post_form.author.username=request.user.username
         if post_form.is_valid():
-            mypost = post_form.save(commit=False)
+            #post_form.slug=re.sub(r'\W+', '',rPost['slug'])
+            mypost = post_form.save(commit=True)
             mypost.save()
             msg = "Saved Successfully"
         else:

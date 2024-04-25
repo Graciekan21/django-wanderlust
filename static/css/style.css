@@ -9,7 +9,11 @@ body {
     background-color: #F9FAFC;
 
 }
-
+/* Hide labels for specific fields */
+label[for="id_slug"],
+label[for="id_author"] {
+    display: none;
+}
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
