@@ -359,22 +359,9 @@ Rebecca at Code Institute's tutor support for the database reset guidance.
 
 For help with manual testing:
 
+- molly
+- Hope
+- Marget
 - 
 - 
 - 
-- 
-- 
-- 
-
-
-
-
-
-
-
-
-
-
-
-
-
