@@ -2,7 +2,7 @@
  
 ### Top 5 Must-Visit Destinations To Zanzibar
 
-![Wanderlust](documentation/images/)
+![Wanderlust](documentation/images/responsive.png)
 
 Portfolio 4 Projects for Code Institute's Diploma in Full Stack Software Development.
 ___
@@ -11,7 +11,7 @@ Zanzibar Wanderlust is a travel blog dedicated to showcasing the top 5 destinati
 
 This full-stack blog site offers users the opportunity to explore detailed blog posts about each destination, create an account to personalize their experience, and leave comments to share their thoughts or ask questions. Join us as we take you on a virtual journey to the breathtaking sights and cultural wonders of Zanzibar, and become a part of our vibrant travel community.
 
-Link to live site - [/](/)
+Link to live site - [https://django-wanderlust-96b58b7e2665.herokuapp.com/](https://django-wanderlust-96b58b7e2665.herokuapp.com/)
 
 ## CONTENTS
 

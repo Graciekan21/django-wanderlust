@@ -10,7 +10,7 @@
             <a class="link bg-dark text-light" href="{% url 'post_detail' post.slug %}">Return to Post</a>
             <div class="col-12">
                 {% if msg %}
-                <script>Swal.fire("{{msg}}");</script>
+                <script>Swal.fire("{{msg}}"); setTimeout(()=>{window.open("{% url 'post_detail' post.slug %}",'_self')},1000);</script>
                 {% endif %}
                 <form class="d-block container" enctype="multipart/form-data" style="background-color: #05668D;color:#FFFFFF" action="" method="POST">
                     {% csrf_token %}

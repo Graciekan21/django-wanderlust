@@ -258,9 +258,10 @@ class PostView(View):
         else:
             # post_form = PostForm()
             msg = "Invalid Input!"
+            rPost['slug']=''
 
         return render(
             request,
             "post.html",
-            {"form": post_form, "msg": msg},
+            {"form": post_form, "msg": msg, 'slug':rPost['slug']},
         )

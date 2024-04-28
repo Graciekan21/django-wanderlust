@@ -4,12 +4,12 @@
 {% load crispy_forms_tags %}
 {% if user.is_authenticated %}
 <center><h1>Add Post</h1></center>
-<div class="row add-post-form" style="background-image: url('https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+<div class="row add-post-form" style="background-image: url('/default.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
     <div class="mx-auto col-10 col-md-8 col-lg-6">
         <div class="form-group" style="margin: 20px;padding:px">
             <div class="col-12 bg-light">
                 {% if msg %}
-                <script>Swal.fire("{{msg}}");</script>
+                <script>Swal.fire("{{msg}}"); setTimeout(()=>{window.open("{% url 'post_detail' slug %}",'_self')},1000);</script>
                 {% endif %}
                 <form class="d-block container" enctype="multipart/form-data" style="background-color: #05668D;color:#FFFFFF" action="" method="POST">
                     {% csrf_token %}
