@@ -152,12 +152,12 @@ The user can create an account
 
 View Blog Posts on Home Page
 
-![View Blog Posts on Home Page](documentation/images/home.png)
+![Home Page](documentation/images/home.png)
  
 Comment on Blog Posts.
 
 *Also depicted here is the trashcan icon, which enables users to delete their own comments if they choose to do so.*
-*Also, there is an edit icon that allows users to edit their comments if they choose to do so..*
+*Also, there is an edit icon that allows users to edit their comments if they choose to do so.*
 
 ![Comment on Blog Posts](documentation/images/commenting.png)
 
