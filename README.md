@@ -165,6 +165,12 @@ Comment on Blog Posts.
 
 ![Comment on Blog Posts](documentation/images/commenting.png)
 
+
+![Add a post](documentation/images/add_post.png)
+
+
+![Edit a Blog Post](documentation/images/edit_post.png)
+
 ## Future Features
 
 - Implementing a profile page for users to upload profile pictures 
