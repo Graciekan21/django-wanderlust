@@ -374,6 +374,6 @@ For help with manual testing:
 - molly
 - Hope
 - Marget
-- 
+- Dan
 - 
 - 
