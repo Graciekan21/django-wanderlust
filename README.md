@@ -152,7 +152,11 @@ The user can create an account
 
 View Blog Posts on Home Page
 
-![Home Page](documentation/images/home.png)
+![View Blog Posts on Home Page](documentation/images/home.png)
+
+Browse by Post Category
+
+![Browse by Post Category](documentation/images/browse_by_category.png)
  
 Comment on Blog Posts.
 
