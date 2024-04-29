@@ -7,7 +7,6 @@ import cloudinary
 from cloudinary.uploader import upload
 import re
 import random
-
 # Function based category view
 # CODE CREDIT - code institute Walk through project
 
@@ -55,11 +54,11 @@ class PostDetailEdit(View):
         rPost = request.POST.copy()
         rPost["author"] = request.user.id
         rPost = request.POST.copy()
-        rPost["slug"] = request.POST["title"]
-        rPost["slug"] = re.sub(r"\W+", "", rPost["slug"])
+        rPost["slug"] = request.POST['title']
+        rPost['slug'] = re.sub(r'\W+', '', rPost['slug'])
         post_form = PostForm(rPost, request.FILES, instance=post)
         if post_form.is_valid():
-            # comment post_form.slug=re.sub(r'\W+', '',rPost['slug'])
+            # post_form.slug=re.sub(r'\W+', '',rPost['slug'])
             # comment_form.instance.featured_image= cloudinary_url
             mypost = post_form.save(commit=False)
             mypost.save()
@@ -247,22 +246,22 @@ class PostView(View):
 # comments = post.comments.filter(approved=True).order_by("-created_on")
         rPost = request.POST.copy()
         rPost["author"] = request.user.id
-        rPost["slug"] = request.POST["title"]
-        rPost["slug"] = re.sub(r"\W+", "", rPost["slug"])
+        rPost["slug"] = request.POST['title']
+        rPost['slug'] = re.sub(r'\W+', '', rPost['slug'])
         post_form = PostForm(rPost, request.FILES)
         # post_form.author.username=request.user.username
         if post_form.is_valid():
-            # comment post_form.slug=re.sub(r'\W+', '',rPost['slug'])
+            # post_form.slug=re.sub(r'\W+', '',rPost['slug'])
             mypost = post_form.save(commit=True)
             mypost.save()
             msg = "Saved Successfully"
         else:
             # post_form = PostForm()
             msg = "Invalid Input!"
-            rPost["slug"] = ""
+            rPost['slug'] = ''
 
         return render(
             request,
             "post.html",
-            {"form": post_form, "msg": msg, "slug": rPost["slug"]},
+            {"form": post_form, "msg": msg, 'slug': rPost['slug']},
         )
