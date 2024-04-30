@@ -5,7 +5,6 @@
 Visit the deployed site: [wandrelust Site](https://django-wanderlust-96b58b7e2665.herokuapp.com/)
 
 
-
 # Testing
 
 During the project, I conducted testing for functionality and styling issues after building each section or Function/Model. Corrections or fixes were made before proceeding. 
@@ -71,6 +70,7 @@ ADMIN
 | Add a blog post | Post a blog succssfully | Pass |
 | Like and Unlike a blog post that you did not create | Successfully | Pass |
 | Any character, such as a space, or submitting an empty form while editing or adding a post. | It will provide feedback indicating invalid input. | Pass|
+
 
 ## Bugs Fixed
 
