@@ -100,10 +100,6 @@ HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
 * [404.html](testing/w3/w3-404.png) - 
 
 
-
-| No | Bug | How I solved the issue |
-| :--- | :--- | :--- |
-
 Fixed 
 
 # fixed Bugs

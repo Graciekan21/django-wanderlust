@@ -211,7 +211,7 @@ During the project, I conducted testing for functionality and styling issues aft
 
 ## Manual Testing
 
-*For any failures, a more detailed description is provided below the table.*
+*For any failures, a more detailed description is provided below in the tables.*
 
 ADMIN
 | TEST | OUTCOME | PASS/FAIL|
@@ -224,7 +224,6 @@ ADMIN
 | Like and Unlike a blog post | The admin can not like or unlike a post that they posted | Pass |
 | Edit Blog post |
 
-(*) - While testing the ability to edit posts (Limited to Admin only), I had a problem when editing the title and slug of the post. This was due to the URL not being able to find the original slug of the post (because it had been changed during the edit) to route it after the editing was complete. At this stage, I felt the easiest fix was to remove the ability to edit the post title and slug in the browser, but this functionality is still available via the django admin panel.
 
 ## User
 
@@ -240,7 +239,6 @@ ADMIN
 | Filter Posts by category | Posts marked as selected category displayed successfully | Pass |
 | Create User Account to check access to restricted pages (add_post, add_category)| Page displayed correct error message, with no access to restricted content | Pass |
 
-(*) See Bugs below
 
 ## Bugs
 
