@@ -55,7 +55,6 @@ ADMIN
 | Edit Blog post | updated successfully | pass 
 | logout | Logout Successful | Pass |
 
-During testing of the like feature (*), which is hidden from the admin to prevent liking their own posts, I encountered an issue while editing the post title and slug. This occurred because the URL could not locate the original slug of the post (as it had been altered during editing) to properly route it after the editing process. To address this issue, I opted for the simplest solution at the time, which was to disable the ability to edit the post title and slug in the browser. However, it's important to note that this functionality remains accessible via the Django admin panel.
 
 ## User
 
@@ -71,8 +70,6 @@ During testing of the like feature (*), which is hidden from the admin to preven
 | Filter Posts by category | Posts marked as selected category displayed successfully | Pass |
 | Add a blog post | Post a blog succssfully | Pass |
 | Like and Unlike a blog post that you did not create | Successfully | Pass |
-
-(*) See Bugs below
 
 ## Bugs
 
@@ -92,20 +89,30 @@ HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
 * [upate_comment.html](testing/w3/.png) - 
 * [post.html](testing/w3/png)
 * [update.html](testing/w3/.png) - 
-[post_detial.html]()
+[post_detial.html]() 
 * [index.html]()
 [base.html]()
 * [404.html](testing/w3/w3-404.png) - 
 
 
 
-Fixed:
+Fixed 
+
+# fixed Bugs
+
+| Bugs | How I FIXED THEM |  | Fixed |
+| As an admin, I was also liking the blog posts I posted. | Hiding the ability for the admin to like and unlike apost | Fixed |
+| I encountered issues with the slug while editing a post, causing errors whenever a user attempted to edit a post | I hid labels for specific fields using Style.css | fixed |
+| The logo and favicon were not appearing on the deployed site | The issue was resolved by removing "Disable collectstatic" from the Heroku config variable. | Fixed |
+|  I also enccounted a lot of identation errors, white space and line too long (81>79) characters while validating through pip8 | This was resolved by utilizing a formatting documentation for each file | Fixed |
+| 
+
 
 ## Python Testing
 
 Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
 
-The only issues encountered here were with indentations and the fact that certain lines of text exceeded the 79-character limit, but these have now been resolved.
+The only issues encountered here were with indentations and the fact that certain lines of text exceeded the 81-79 character limit, but these have now been resolved.
 
 Python Files Tested:
 

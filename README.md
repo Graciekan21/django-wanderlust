@@ -369,5 +369,4 @@ For help with manual testing:
 - Hope
 - Marget
 - Dan
-- 
-- 
+- Freddie
