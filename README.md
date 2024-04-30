@@ -38,9 +38,10 @@ Link to live site - [https://django-wanderlust-96b58b7e2665.herokuapp.com/](http
 - [Technologies Used](#technologies-used)
 - [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
 - [Agile](#agile)
-- [Testing](#testing)
-  - [Bugs](#bugs)
-  - [Deployment](#deployment)
+-  [Testing](#testing)
+  - [Solved Bugs](#solved-bugs)
+  - [Known Bugs](#known-bugs)
+   - [Deployment](#deployment)
     - [Github Deployment](#github-deployment)
     - [Creating a Fork or Copying](#creating-a-fork-or-copying)
     - [Clone](#clone)
@@ -205,7 +206,11 @@ This project was developed using Agile methodology, making use of the Project Bo
 
 - [Project Board](https://github.com/users/Graciekan21/projects/5/views/1)
 
-# Testing
+___
+
+## Testing
+
+Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 
 During the project, I conducted testing for functionality and styling issues after building each section or Function/Model. Corrections or fixes were made before proceeding. Additionally, I enlisted friends to test the site by signing up, adding, and deleting comments using various devices and platforms (IOS, Android, Mobile, Tablet, etc.), and they reported any encountered issues with functionality or styling.
 
@@ -239,8 +244,6 @@ ADMIN
 | Filter Posts by category | Posts marked as selected category displayed successfully | Pass |
 | Create User Account to check access to restricted pages (add_post, add_category)| Page displayed correct error message, with no access to restricted content | Pass |
 
-
-## Bugs
 
 ## Lighthouse
 

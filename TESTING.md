@@ -1,15 +1,9 @@
 ## Testing
 
-Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
-
-### Solved Bugs
-
-
 ![Wanderlust shown on a variety of screen sizes](documention/images/Wanderlust_blog_site.png)
 
 Visit the deployed site: [wandrelust Site](https://django-wanderlust-96b58b7e2665.herokuapp.com/)
 
-___
 
 # Testing
 
@@ -17,6 +11,7 @@ During the project, I conducted testing for functionality and styling issues aft
 Throughout development, I utilized Google developer tools to verify proper functionality and to aid in diagnosing unexpected issues.
 I thoroughly inspected each page using Google Chrome developer tools and the Firefox inspector tool to ensure responsiveness across various screen sizes and devices. Additionally, I enlisted friends to test the site by signing up, adding, and deleting comments using various devices and platforms (IOS, Android, Mobile, Tablet, etc.), and they reported any encountered issues with functionality or styling.
 
+___
 
 ## CONTENTS
 
