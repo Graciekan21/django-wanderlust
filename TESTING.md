@@ -76,7 +76,16 @@ ADMIN
 | Like and Unlike a blog post that you did not create | Successfully | Pass |
 | Any character, such as a space, or submitting an empty form while editing or adding a post. | It will provide feedback indicating invalid input. | Pass|
 
-## Bugs
+## Bugs Fixed
+
+| No | Bugs | How I solved the issue |
+| :--- | :--- | :--- |
+| 1 | As an admin, I was also liking the blog posts I posted. | Hiding the ability for the admin to like and unlike apost |
+| 2 | I encountered issues with the slug while editing a post, causing errors whenever a user attempted to edit a post | I hid labels for specific fields using Style.css |
+|3 | The logo and favicon were not appearing on the deployed site | The issue was resolved by removing "Disable collectstatic" from the Heroku config variable. |
+| 4 | I also encountered numerous indentation errors, excessive white space, and lines that were too long (81>79) characters while validating through pep8 | This was resolved by utilizing a formatting documentation for each file |
+| 
+
 
 ## Validation Testing
 
@@ -98,20 +107,6 @@ HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
 * [index.html]()
 [base.html]()
 * [404.html](testing/w3/w3-404.png) - 
-
-
-Fixed 
-
-# fixed Bugs
-
-| No | Bugs | How I solved the issue |
-| :--- | :--- | :--- |
-| 1 | As an admin, I was also liking the blog posts I posted. | Hiding the ability for the admin to like and unlike apost |
-| 2 | I encountered issues with the slug while editing a post, causing errors whenever a user attempted to edit a post | I hid labels for specific fields using Style.css |
-|3 | The logo and favicon were not appearing on the deployed site | The issue was resolved by removing "Disable collectstatic" from the Heroku config variable. |
-| 4 | I also encountered numerous indentation errors, excessive white space, and lines that were too long (81>79) characters while validating through pep8 | This was resolved by utilizing a formatting documentation for each file |
-| 
-
 
 ## Python Testing
 
