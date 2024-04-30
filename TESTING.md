@@ -1,10 +1,10 @@
 ## Testing
 
-![Wanderlust shown on a variety of screen sizes](documention/images/wanderlust_blog_site.png)
+![Wanderlust](documentation/images/responsive.png)
 
 Visit the deployed site: [wandrelust Site](https://django-wanderlust-96b58b7e2665.herokuapp.com/)
 
-___
+
 
 # Testing
 

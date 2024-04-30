@@ -100,7 +100,7 @@ ___
 The project's color scheme was derived from the colors featured in Code Institute's 'I think therefore I blog' walkthrough module. However, I have made numerous adjustments and enhancements to the styling and colors to align with my objectives. The scheme leans towards neutrality, with brighter colors reserved for actionable elements like buttons and links to facilitate navigation and site interaction. 
 I adjusted the color to my taste.
 
-![Wanderlust Color Scheme](documentation/image/color_scheme.png)
+![Colour Scheme](documentation/image/color_scheme.png)
 
 ## Typography
 
