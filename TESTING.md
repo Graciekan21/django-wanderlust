@@ -1,4 +1,8 @@
-# Wanderlust - Testing
+## Testing
+
+Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
+
+### Solved Bugs
 
 
 ![Wanderlust shown on a variety of screen sizes](documention/images/Wanderlust_blog_site.png)
@@ -70,6 +74,7 @@ ADMIN
 | Filter Posts by category | Posts marked as selected category displayed successfully | Pass |
 | Add a blog post | Post a blog succssfully | Pass |
 | Like and Unlike a blog post that you did not create | Successfully | Pass |
+| Any character, such as a space, or submitting an empty form while editing or adding a post. | It will provide feedback indicating invalid input. | Pass|
 
 ## Bugs
 
@@ -96,15 +101,19 @@ HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
 
 
 
+| No | Bug | How I solved the issue |
+| :--- | :--- | :--- |
+
 Fixed 
 
 # fixed Bugs
 
-| Bugs | How I FIXED THEM |  | Fixed |
-| As an admin, I was also liking the blog posts I posted. | Hiding the ability for the admin to like and unlike apost | Fixed |
-| I encountered issues with the slug while editing a post, causing errors whenever a user attempted to edit a post | I hid labels for specific fields using Style.css | fixed |
-| The logo and favicon were not appearing on the deployed site | The issue was resolved by removing "Disable collectstatic" from the Heroku config variable. | Fixed |
-|  I also enccounted a lot of identation errors, white space and line too long (81>79) characters while validating through pip8 | This was resolved by utilizing a formatting documentation for each file | Fixed |
+| No | Bugs | How I solved the issue |
+| :--- | :--- | :--- |
+| 1 | As an admin, I was also liking the blog posts I posted. | Hiding the ability for the admin to like and unlike apost |
+| 2 | I encountered issues with the slug while editing a post, causing errors whenever a user attempted to edit a post | I hid labels for specific fields using Style.css |
+|3 | The logo and favicon were not appearing on the deployed site | The issue was resolved by removing "Disable collectstatic" from the Heroku config variable. |
+| 4 | I also encountered numerous indentation errors, excessive white space, and lines that were too long (81>79) characters while validating through pep8 | This was resolved by utilizing a formatting documentation for each file |
 | 
 
 
@@ -134,5 +143,4 @@ Full testing was performed on the following devices:
   * iPhone 11 pro.
   * Phone X.
 
-  
-
+___

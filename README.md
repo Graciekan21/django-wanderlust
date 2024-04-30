@@ -96,15 +96,20 @@ ___
 
 ## Colour Scheme
 
-The project's color scheme was derived from the colors featured in Code Institute's 'I think therefore I blog' walkthrough module. However, I have made numerous adjustments and enhancements to the styling and colors to align with my objectives. The scheme leans towards neutrality, with brighter colors reserved for actionable elements like buttons and links to facilitate navigation and site interaction.
+The project's color scheme was derived from the colors featured in Code Institute's 'I think therefore I blog' walkthrough module. However, I have made numerous adjustments and enhancements to the styling and colors to align with my objectives. The scheme leans towards neutrality, with brighter colors reserved for actionable elements like buttons and links to facilitate navigation and site interaction. 
+I adjusted the color to my taste.
+
+![Wanderlust Color Scheme](documentation/image/color_scheme.png)
 
 ## Typography
 
-The primary font utilized is -------, while Tangerine was employed for the main logo text on the navbar.
+The primary font utilized is font-family: Roboto, sans-serif; for the intro message while Puppies Play
+was employed for the main logo text on 
 
 ## Logo and Favicon
 
 The logo was crafted utilizing an online logo creator - [Favicon](https://favicon.io/)
+
 
 ## Wireframes
 
@@ -171,9 +176,7 @@ Comment on Blog Posts.
 
 ## Features Not Included
 
-Including an option for users to upload photos within comments.
-
----------
+Including an option for users to upload photos within comments
 ___
 
 # Technologies Used
