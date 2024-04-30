@@ -17,14 +17,27 @@ I thoroughly inspected each page using Google Chrome developer tools and the Fir
 ## CONTENTS
 
 - [AUTOMATED TESTING](#automated-testing)
-  - [Manual Testing](#manual-testing)
   - [User](#user)
   - [Bugs](#bugs)
   - [Lighthouse](#lighthouse)
+  - [MANUAL TESTING](#manual-testing)
   - [Validation Testing](#validation-testing)
     - [HTML \& CSS](#html--css)
   - [Python Testing](#python-testing)
+  - [Full Testing](#full-testing)
   
+
+## Lighthouse
+
+The performance scores appear to be low, and I attribute this to the images uploaded for each blog post being hosted on a third-party cloud-based platform.
+
+Mobile
+
+![Lighthouse Mobile Score](documentation/images/lighthouse_mobile.png)
+
+Desktop
+
+![Lighthouse Desktop Score](documentation/images/lighthouse_desktop.png)
 
 ## Manual Testing
 
@@ -42,7 +55,7 @@ ADMIN
 | Edit Blog post | updated successfully | pass 
 | logout | Logout Successful | Pass |
 
-(*) - While testing the ability to like posts (Hidden from Admin not to be able to like the post that is created by the admin ), I had a problem when editing the title and slug of the post. This was due to the URL not being able to find the original slug of the post (because it had been changed during the edit) to route it after the editing was complete. At this stage, I felt the easiest fix was to remove the ability to edit the post title and slug in the browser, but this functionality is still available via the django admin panel.
+During testing of the like feature (*), which is hidden from the admin to prevent liking their own posts, I encountered an issue while editing the post title and slug. This occurred because the URL could not locate the original slug of the post (as it had been altered during editing) to properly route it after the editing process. To address this issue, I opted for the simplest solution at the time, which was to disable the ability to edit the post title and slug in the browser. However, it's important to note that this functionality remains accessible via the Django admin panel.
 
 ## User
 
@@ -63,17 +76,6 @@ ADMIN
 
 ## Bugs
 
-## Lighthouse
-
-The performance scores appear to be low, and I attribute this to the images uploaded for each blog post being hosted on a third-party cloud-based platform.
-
-Mobile
-
-![Lighthouse Mobile Score](documentation/images/lighthouse_mobile.png)
-
-Desktop
-
-![Lighthouse Desktop Score](documentation/images/lighthouse_desktop.png)
 ## Validation Testing
 
 ### HTML & CSS
@@ -81,8 +83,21 @@ Desktop
 HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
 
 
-
 ![HTML Validation - Descendant Error](documentation/testing_documentation/validation/base.html_button_descendant.png)
+
+### W3C Validator
+
+[W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the website. It was also used to validate the CSS.
+
+* [upate_comment.html](testing/w3/.png) - 
+* [post.html](testing/w3/png)
+* [update.html](testing/w3/.png) - 
+[post_detial.html]()
+* [index.html]()
+[base.html]()
+* [404.html](testing/w3/w3-404.png) - 
+
+
 
 Fixed:
 
