@@ -354,7 +354,7 @@ ___
 
 ## Media
 
-For placeholder images when no image is uploaded to a blog post, I have utilized [picsum](https://picsum.photos/) which offers a library of stock images that display as a placeholder.
+For placeholder images when no image is uploaded to a blog post, I have utilized the one used in by Code Institute for Walk through project [](https://picsum.photos/) which offers a library of stock images that display as a placeholder.
  All other content and images are my own.
 
 ___
