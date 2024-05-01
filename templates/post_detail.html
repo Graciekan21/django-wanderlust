@@ -27,7 +27,7 @@
             <div class="d-block d-md-none col-sm-12 h-5">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://www.pexels.com/photo/concrete-houses-covered-with-leaves-210017/default.jpg" alt="Post Image" class="w-100 h-5">
+                <img src="https://www.pexels.com/photo/concrete-houses-covered-with-leaves-210017//default.jpg" alt="Post Image" class="w-100 h-5">
                 {% else %}
                 <img src=" {{ post.featured_image.url }}" alt="Post Image" class="w-100 h-5">
                 {% endif %}
@@ -42,7 +42,7 @@
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">
+                <p class="card-text">
                     {{ post.content | safe }}
                 </p>
                 <div class="row">
@@ -51,12 +51,13 @@
                         {% if msg %}
                         <script>Swal.fire("{{msg}}");</script>
                         {% endif %}
-                        <strong>
+                        
                         {% if user.is_superuser %}
                         <span class="text-secondary"><i class="far fa-heart"></i>{{ post.number_of_likes }}</span>
                         {% else %}
                             {% if user.is_authenticated %}
                             <form class="d-inline" enctype="multipart/form-data" action="{% url 'post_like' post.slug %}" method="POST">
+                                <strong>
                                 {% csrf_token %}
                                 {% if likes %}
                                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
@@ -65,12 +66,13 @@
                                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
                                     aria-label="unlike this post"><i class="far fa-heart"></i>{{ post.number_of_likes }}</button>
                                 {% endif %}
+                            </strong>
                             </form>
                             {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i>{{ post.number_of_likes }}</span>
+                        <strong><span class="text-secondary"><i class="far fa-heart"></i>{{ post.number_of_likes }}</span></strong>
                             {% endif %}
                         {% endif %}
-                        </strong>
+                        
                     </div>
                     <div class="col-1">
                         {% with comments_2.count as total_comments %}

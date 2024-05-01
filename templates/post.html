@@ -3,10 +3,9 @@
 {% block content %}
 {% load crispy_forms_tags %}
 {% if user.is_authenticated %}
-<h1><blockquote class="blockquote text-center">
-    <p class="mb-0">Add Post</p>
-    </blockquote>
-</h1>
+<blockquote class="blockquote text-center">
+    <div class="mb-0"><h1>Add Post</h1></div>
+</blockquote>
 <div class="row add-post-form" style="background-image: url('https://www.pexels.com/photo/concrete-houses-covered-with-leaves-210017/default.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
     <div class="mx-auto col-10 col-md-8 col-lg-6">
         <div class="form-group" style="margin: 20px; padding: 0;">
@@ -14,20 +13,42 @@
                 {% if msg %}
                 <script>Swal.fire("{{msg}}"); setTimeout(()=>{window.open("{% url 'post_detail' slug %}",'_self')},1000);</script>
                 {% endif %}
-                <form class="d-block container" enctype="multipart/form-data" style="background-color: #05668D;color:#FFFFFF" action="" method="POST">
+                <form class="d-block container" enctype="multipart/form-data" style="background-color: #05668D;color:#FFFFFF " action="{% url 'post' %}" method="POST">
                     {% csrf_token %}
-                    {{ form }}
+                    <table>
+                        {{ form }}
+                    </table>
                     <input type="submit" class="form-control btn btn-success" value="Post">
                 </form>
             </div>
         </div>
     </div>
 </div>
+<script>
+    // Get all input elements with hidden attribute
+    var inputsWithValueZero = document.querySelectorAll('input');
+  
+    // Function to remove the required attribute
+    function removeDuplicateValueZero(inputs) {
+      inputs.forEach(function(input) {
+        // Check if the input already has a hidden attribute defined
+        if (input.hasAttribute('hidden') && input.hasAttribute('required')) {
+          // Remove the required attribute
+          input.removeAttribute('required');
+        }
+      });
+    }
+  
+    // Remove value attribute equal to "0" only if it's a duplicate
+    removeDuplicateValueZero(inputsWithValueZero);
+  </script>
+
 {% else %}
 <div class="container">
     <h1>Admin priviledges required!</h1><br><br>
     click <a href="{% url 'account_login' %}"><strong>Login</strong></a>
 </div>
+
 {% endif %}
 
 {% endblock content %}

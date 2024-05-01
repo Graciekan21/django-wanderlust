@@ -3,22 +3,22 @@
 {% block content %}
 {% load crispy_forms_tags %}
 {% if user.is_authenticated %}
-<h1><blockquote class="blockquote text-center">
-    <p class="mb-0">Edit Comment</p>
+<blockquote class="blockquote text-center">
+    <div class="mb-0"><h1>Edit Comment</h1></div>
     </blockquote>
-</h1>
+
 <div class="row add-post-form" style="background-image: url('https://www.pexels.com/photo/concrete-houses-covered-with-leaves-210017/default.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
     <div class="mx-auto col-10 col-md-8 col-lg-6">
         <a class="link bg-dark text-light" href="{% url 'post_detail' post.slug %}">Return to Post</a>
         
-        <div class="form-group" style="margin: 20px;padding:px">
+        <div class="form-group" style="margin: 20px;padding:2px">
             <div class="col-12">
                 {% if msg %}
                 <script>Swal.fire("{{msg}}"); setTimeout(()=>{window.open("{% url 'post_detail' post.slug %}",'_self')},1000);</script>
                 {% endif %}
-                <form class="d-block container" style="background-color: #05668D;color:#FFFFFF" action="" method="POST">
+                <form class="d-block container" style="background-color: #05668D;color:#FFFFFF" method="POST">
                     {% csrf_token %}
-                    {{form}}
+                    <table>{{form}}</table>
                     <input type="submit" class="form-control btn btn-success" value="Update">
                 </form>
             </div>

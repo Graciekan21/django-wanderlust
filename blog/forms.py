@@ -31,10 +31,10 @@ class PostForm(forms.ModelForm):
         widgets = {
             "title": forms.TextInput(attrs={"class": "form-control"}),
             "slug": forms.TextInput(attrs={"class": "form-control",
-                                           "hidden": "hidden", "value": "0"}),
+                                           "hidden": "hidden", "required":"required"}),
             "author": forms.TextInput(
                 attrs={"class": "form-control",
-                       "hidden": "hidden", "value": "0", }),
+                       "hidden": "hidden", "required":"required"}),
             "category": forms.Select(
                 choices=choice_list, attrs={"class": "form-control"}
             ),
@@ -43,15 +43,3 @@ class PostForm(forms.ModelForm):
             "content": forms.Textarea(attrs={"class": "form-control"}),
             "status": forms.Select(attrs={"class": "form-control"}),
         }
-# Remove labels for hidden fields
-        for field_name, widget in widgets.items():
-            if "hidden" in widget.attrs and widget.attrs["hidden"] == "hidden":
-                widget.attrs["label"] = ""
-
-        title = forms.CharField(widget=widgets["title"])
-        slug = forms.CharField(widget=widgets["slug"])
-        author = forms.CharField(widget=widgets["author"])
-        category = forms.ChoiceField(choices=choice_list,
-                                     widget=widgets["category"])
-        featured_image = forms.FileField(widget=widgets["featured_image"])
-        content = forms.CharField(widget=widgets["content"])
