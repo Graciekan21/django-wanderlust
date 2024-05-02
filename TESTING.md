@@ -98,10 +98,10 @@ HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
 I utilized the "View Page Source" option to access the HTML code, then copied and pasted it into the W3C HTML validator of django 
  [W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the website. It was also used to validate the CSS.
 
-![Home Page](/documentation/testing/w3/home_validated%20(2).png) - 
-![Add post](/documentation/testing/w3/edit_validate.png)
+![Home Page](/documentation/testing/w3/home_.png) - 
+![Add post](/documentation/testing/w3/edit_validate.png) -
 ![Edit post](/documentation/testing/w3/edit_validate.png) - 
-![comment page](/documentation/testing/w3/comment_validated%20(2).png) -
+![comment page](/documentation/testing/w3/comment_validate.png) -
 ![index.html](/documentation/testing/w3/) -
 ![base.html](/documentation/testing/w3/base_html.png) -
 ![404.html](/documentation/testing/w3/404_Html.png) - 
