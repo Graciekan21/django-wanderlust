@@ -19,7 +19,7 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img class="card-img-top" src="https://www.pexels.com/photo/concrete-houses-covered-with-leaves-210017/default.jpg" alt="Placeholder image" class="w-100 h-5">
+                <img class="card-img-top" src="https://images.pexels.com/photos/210017/pexels-photo-210017.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1/default.jpg" alt="Placeholder image" class="w-100 h-5">
                 {% else %}
                 <img src=" {{ post.featured_image.url }}" alt="Post Image" class="w-100 h-5">
                 {% endif %}
@@ -27,7 +27,7 @@
             <div class="d-block d-md-none col-sm-12 h-5">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://www.pexels.com/photo/concrete-houses-covered-with-leaves-210017//default.jpg" alt="Post Image" class="w-100 h-5">
+                <img src="https://images.pexels.com/photos/210017/pexels-photo-210017.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1/default.jpg" alt="Post Image" class="w-100 h-5">
                 {% else %}
                 <img src=" {{ post.featured_image.url }}" alt="Post Image" class="w-100 h-5">
                 {% endif %}
