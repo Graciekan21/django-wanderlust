@@ -72,7 +72,8 @@ ADMIN
 | Any character, such as a space, or submitting an empty form while editing or adding a post. | It will provide feedback indicating invalid input. | Pass|
 
 
-## Bugs Fixed
+## Bugs 
+- Fixed
 
 | No | Bugs | How I solved the issue |
 | :--- | :--- | :--- |
@@ -94,15 +95,16 @@ HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
 
 ### W3C Validator
 
-[W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the website. It was also used to validate the CSS.
+I utilized the "View Page Source" option to access the HTML code, then copied and pasted it into the W3C HTML validator of django 
+ [W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the website. It was also used to validate the CSS.
 
-* [upate_comment.html](testing/w3/.png) - 
-* [post.html](testing/w3/png)
-* [update.html](testing/w3/.png) - 
-[post_detial.html]() 
-* [index.html]()
-[base.html]()
-* [404.html](testing/w3/w3-404.png) - 
+* [Home Page](/documentation/testing/w3c/home_validated.png) - 
+* [Add post](/documentation/testing/w3c/edit_validate.png)
+* [Edit post](/documentation/testing/w3c/edit_validate.png) - 
+[comment page](/documentation/testing/w3c/comment_validated%20(2).png) -
+* [index.html](/documentation/testing/w3c/) -
+[base.html](/documentation/testing/w3c/base_html.png) -
+* [404.html](/documentation/testing/w3c/404_Html.png) - 
 
 ## Python Testing
 
