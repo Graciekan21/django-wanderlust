@@ -31,8 +31,8 @@ class Post(models.Model):
     category = models.TextField(choices=categories, default=1)
 
 
-class Meta:
-    ordering = ["-created_on"]
+    class Meta:
+        ordering = ["-created_on"]
 
     def __str__(self):
         return self.title
@@ -62,9 +62,8 @@ class Comment(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
+    class Meta:
+        ordering = ["created_on"]
 
-class Meta:
-    ordering = ["created_on"]
-
-    def __str__(self):
-        return f"coment {self.boby} by {self.name}"
+        def __str__(self):
+            return f"comment {self.boby} by {self.name}"

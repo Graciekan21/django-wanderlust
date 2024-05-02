@@ -362,11 +362,9 @@ ___
 
 ## Acknowledgments and Thanks
 
-Alan, Roo, John, Roman, Rebecca and Sarah at Code Institute's tutor support for the help and guidance with my code-related brain melts.
+Alan, Roo, John, Roman, Rebecca and Sarah at Code Institute's tutor support for the help and guidance with my code-related brain melts and also for the database reset guidance.
 
-Rebecca at Code Institute's tutor support for the database reset guidance.
-
- [CodeInstitute](https://learn.codeinstitute.net/courses/) CodeInstitute
+[CodeInstitute](https://learn.codeinstitute.net/courses/) CodeInstitute
 
 For help with manual testing:
 
