@@ -90,14 +90,6 @@ ADMIN
 
 HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
 
-
-![HTML Validation - Descendant Error](documentation/testing_documentation/validation/base.html_button_descendant.png)
-
-### W3C Validator
-
-I utilized the "View Page Source" option to access the HTML code, then copied and pasted it into the W3C HTML validator of django 
-![W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the website. It was also used to validate the CSS.
-
 ![Home Page](/documentation/testing/w3c/home_validated.png) - 
 ![Add post](/documentation/testing/w3c/edit_validate.png)
 ![Edit post](/documentation/testing/w3c/edit_validate.png) - 
@@ -105,6 +97,16 @@ I utilized the "View Page Source" option to access the HTML code, then copied an
 ![index.html](/documentation/testing/w3c/) -
 ![base.html](/documentation/testing/w3c/base_html.png) -
 ![404.html](/documentation/testing/w3c/404_Html.png) - 
+
+![HTML Validation - Descendant Error](documentation/testing_documentation/validation/base.html_button_descendant.png)
+
+### W3C Validator
+
+[W3 Validator](https://jigsaw.w3.org/css-validator/validator/)
+
+I utilized the "View Page Source" option to access the HTML code, then copied and pasted it into the W3C HTML validator of django 
+ was used to validate the HTML on all pages of the website. It was also used to validate the CSS.
+
 
 ## Python Testing
 
