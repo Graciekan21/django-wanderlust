@@ -343,7 +343,8 @@ I also added several custom Views and Forms to the site, as well as ensuring tha
 For inspiration and fine-tuning of my code, I referred to John Elder's youtube channel [Codemy](https://www.youtube.com/@Codemycom) where I was able to get a better understanding of how to correctly create this type of product using Django and Bootstrap.
 
 The project guide and the readme layout was based on the example by [Kasia Bogucka - Portfolio Project 4 - The guide to MVP](https://youtu.be/vIv1c6RLBac?si=3pncBJmgvJ0tgBcd ) 
-I want also acknolage My mentor Jubril Akolade, for help me to understand how to structure the readme with[ Sdalsosa- Readme](https://github.com/Sdalsosa/ComposerHub/blob/main/README.md)
+
+I also want to aknoledge My mentor [Jubril Akolade](https://learn.codeinstitute.net/ci_support/diplomainsoftwaredevelopmentecomm/mentor) for help me to understand how to structure the readme with[ Sdalsosa- Readme](https://github.com/Sdalsosa/ComposerHub/blob/main/README.md)
  
 The wireframe mockups were created using [figma](https://www.figma.com//)
 After finishing, the README file was subjected to a spelling and grammar check using.
@@ -354,7 +355,7 @@ ___
 
 ## Media
 
-For placeholder images when no image is uploaded to a blog post, I have utilized the one used in by Code Institute for Walk through project [](https://picsum.photos/) which offers a library of stock images that display as a placeholder.
+Using a stock image library like Pexels for placeholder images when none are uploaded to a blog post is a smart move. It ensures that your posts maintain visual appeal even when there's no specific image provided. Plus, it's convenient and saves time compared to creating your own placeholders. As long as you're still incorporating your original content and images throughout your blog, using stock images as placeholders shouldn't detract from your unique voice and style. It's all about striking a balance between efficiency and originality.
  All other content and images are my own.
 
 ___
@@ -374,3 +375,4 @@ For help with manual testing:
 - Marget
 - Dan
 - Freddie
+- Sandra
