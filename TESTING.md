@@ -82,13 +82,16 @@ ADMIN
 |3 | The logo and favicon were not appearing on the deployed site | The issue was resolved by removing "Disable collectstatic" from the Heroku config variable. |
 | 4 | I also encountered numerous indentation errors, excessive white space, and lines that were too long (81>79) characters while validating through pep8 | This was resolved by utilizing a formatting documentation for each file |
 
-
+___
 
 ## Validation Testing
 
 ### HTML & CSS
 
 HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
+
+
+![HTML Validation - Descendant Error](documentation/testing_documentation/validation/base.html_button_descendant.png)
 
 ![Home Page](/documentation/testing/w3c/home_validated.png) - 
 ![Add post](/documentation/testing/w3c/edit_validate.png)
@@ -98,14 +101,10 @@ HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
 ![base.html](/documentation/testing/w3c/base_html.png) -
 ![404.html](/documentation/testing/w3c/404_Html.png) - 
 
-![HTML Validation - Descendant Error](documentation/testing_documentation/validation/base.html_button_descendant.png)
-
 ### W3C Validator
 
-[W3 Validator](https://jigsaw.w3.org/css-validator/validator/)
+[W3C Validator](https://jigsaw.w3.org/css-validator/validator/)
 
-I utilized the "View Page Source" option to access the HTML code, then copied and pasted it into the W3C HTML validator of django 
- was used to validate the HTML on all pages of the website. It was also used to validate the CSS.
 
 
 ## Python Testing
