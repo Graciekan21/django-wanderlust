@@ -30,7 +30,6 @@ class Post(models.Model):
         User, related_name="blogpost_like", blank=True)
     category = models.TextField(choices=categories, default=1)
 
-
     class Meta:
         ordering = ["-created_on"]
 

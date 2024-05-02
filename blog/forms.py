@@ -30,11 +30,20 @@ class PostForm(forms.ModelForm):
 
         widgets = {
             "title": forms.TextInput(attrs={"class": "form-control"}),
-            "slug": forms.TextInput(attrs={"class": "form-control",
-                                           "hidden": "hidden", "required":"required"}),
+            "slug": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "hidden": "hidden",
+                    "required": "required",
+                }
+            ),
             "author": forms.TextInput(
-                attrs={"class": "form-control",
-                       "hidden": "hidden", "required":"required"}),
+                attrs={
+                    "class": "form-control",
+                    "hidden": "hidden",
+                    "required": "required",
+                }
+            ),
             "category": forms.Select(
                 choices=choice_list, attrs={"class": "form-control"}
             ),
