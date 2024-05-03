@@ -91,11 +91,26 @@ ADMIN
 HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
 
 ### W3 Validator
+
 For html validation i utilized [w3 HTML](https://jigsaw.w3.org/)
 I utilized the "View Page Source" option to access the HTML code, then copied and pasted it into the W3C CSS validator for validation
  [W3C css](https://jigsaw.w3.org/css-validator/validator/) 
 
-![Home Page](/documentation/testing/w3/home_validated.png) - 
+# User
+![Home Page](/documentation/testing_validation/w3/home_validation.png) - 
+No errors were detected.
+
+![Add post](/documentation/testing_validation/w3/) - It pased validation
+
+![Edit post](/documentation/testing_validation//w3/edit_validation.png) - No errors 
+
+![comment page](/documentation/testing_validation//w3/comment_validation.png) - No erro
+
+![index.html](/documentation/testing_validation/w3/edit_validation.png) - No error                                                                                                                                                                                                       ![base.html](/documentation/testing/w3/base_html.png) - No error
+
+![404.html](/documentation/testing/w3/404_Html.png) - No error
+
+
 
 
 ## Python Testing
@@ -105,6 +120,7 @@ Python pep8 validation was done via [Code Institute's Python Linter](https://pep
 The only issues encountered here were with indentations and the fact that certain lines of text exceeded the 81-79 character limit, but these have now been resolved.
 
 Python Files Tested:
+No errors
 
 - models 
 - forms

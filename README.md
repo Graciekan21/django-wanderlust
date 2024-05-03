@@ -256,6 +256,11 @@ Mobile
 Desktop
 
 ![Lighthouse Desktop Score](documentation/images/lighthouse_desktop.png)
+
+
+
+## Validation Testing
+
 ![Add post](/documentation/testing/w3/) -
 ![Edit post](/documentation/testing/w3/edit_validate.png) - 
 ![comment page](/documentation/testing/w3/comment_validate.png) -
@@ -263,8 +268,6 @@ Desktop
 ![base.html](/documentation/testing/w3/base_html.png) -
 ![404.html](/documentation/testing/w3/404_Html.png) - 
 
-
-## Validation Testing
 
 ### HTML & CSS
 
