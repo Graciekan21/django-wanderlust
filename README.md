@@ -256,6 +256,13 @@ Mobile
 Desktop
 
 ![Lighthouse Desktop Score](documentation/images/lighthouse_desktop.png)
+![Add post](/documentation/testing/w3/) -
+![Edit post](/documentation/testing/w3/edit_validate.png) - 
+![comment page](/documentation/testing/w3/comment_validate.png) -
+![index.html](/documentation/testing/w3/) -
+![base.html](/documentation/testing/w3/base_html.png) -
+![404.html](/documentation/testing/w3/404_Html.png) - 
+
 
 ## Validation Testing
 
@@ -274,8 +281,9 @@ Fixed:
 Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
 
 The only issues encountered here were with indentations and the fact that certain lines of text exceeded the 79-character limit, but these have now been resolved.
-
+![Error solved]()
 Python Files Tested:
+
 
 - models
 - forms

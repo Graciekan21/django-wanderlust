@@ -38,7 +38,6 @@ ALLOWED_HOSTS = ['django-wanderlust-96b58b7e2665.herokuapp.com',
                 '8000-graciekan21-djangowande-fotzpjegwgv.ws-eu110.gitpod.io', 
                 'localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [
