@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '8000-graciekan21-djangowande-fotzpjegwgv.ws-eu112.gitpod.io', 
+    '8000-graciekan21-djangowande-fotzpjegwgv.ws-eu110.gitpod.io', 
     'django-wanderlust-96b58b7e2665.herokuapp.com',
     'localhost'
     ]
