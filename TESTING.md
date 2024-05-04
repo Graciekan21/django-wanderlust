@@ -16,7 +16,6 @@ ___
 ## CONTENTS
 
 - [AUTOMATED TESTING](#automated-testing)
-  - [User](#user)
   - [Bugs](#bugs)
   - [Lighthouse](#lighthouse)
   - [MANUAL TESTING](#manual-testing)
@@ -40,7 +39,7 @@ Desktop
 
 ## Manual Testing
 
-*For any failures, a more detailed description is provided below the table.*
+## Testing
 
 ADMIN
 | TEST | OUTCOME | PASS/FAIL|
@@ -71,20 +70,7 @@ ADMIN
 | Like and Unlike a blog post that you did not create | Successfully | Pass |
 | Any character, such as a space, or submitting an empty form while editing or adding a post. | It will provide feedback indicating invalid input. | Pass|
 
-
-## Bugs 
-- Fixed
-
-| No | Bugs | How I solved the issue |
-| :--- | :--- | :--- |
-| 1 | As an admin, I was also liking the blog posts I posted. | Hiding the ability for the admin to like and unlike apost |
-| 2 | I encountered issues with the slug while editing a post, causing errors whenever a user attempted to edit a post | I hid labels for specific fields using Style.css |
-|3 | The logo and favicon were not appearing on the deployed site | The issue was resolved by removing "Disable collectstatic" from the Heroku config variable. |
-| 4 | I also encountered numerous indentation errors, excessive white space, and lines that were too long (81>79) characters while validating through pep8 | This was resolved by utilizing a formatting documentation for each file |
-
-
-
-## Validation Testing
+### Validation Testing
 
 ### HTML & CSS
 
@@ -96,21 +82,18 @@ For html validation i utilized [w3 HTML](https://jigsaw.w3.org/)
 I utilized the "View Page Source" option to access the HTML code, then copied and pasted it into the W3C CSS validator for validation
  [W3C css](https://jigsaw.w3.org/css-validator/validator/) 
 
-# User
-![Home Page](/documentation/testing_validation/w3/home_validation.png) - 
-No errors were detected.
+![Home Page](/documentation/testing_validation/w3/home_validation.png) 
+
 
 ![Add post](/documentation/testing_validation/w3/) - It pased validation
 
-![Edit post](/documentation/testing_validation//w3/edit_validation.png) - No errors 
+![Edit post](/documentation/testing_validation//w3/edit_validation.png) 
 
-![comment page](/documentation/testing_validation//w3/comment_validation.png) - No erro
+![comment page](/documentation/testing_validation//w3/comment_validation.png) 
 
-![index.html](/documentation/testing_validation/w3/edit_validation.png) - No error                                                                                                                                                                                                       ![base.html](/documentation/testing/w3/base_html.png) - No error
+![index.html](/documentation/testing_validation/w3/edit_validation.png)                                                                                                                                                                                                     ![base.html](/documentation/testing/w3/base_html.png) 
 
-![404.html](/documentation/testing/w3/404_Html.png) - No error
-
-
+![404.html](/documentation/testing/w3/404_Html.png) 
 
 
 ## Python Testing
@@ -122,10 +105,10 @@ The only issues encountered here were with indentations and the fact that certai
 Python Files Tested:
 No errors
 
-- models 
-- forms
-- views
-- urls
+- [models](/documentation/testing_validation/w3/model.py_validation.png)
+- [forms](/documentation/testing_validation/w3/form.py_validation.png)
+- [views](/documentation/testing_validation/w3/view.py_validation.png)
+- [urls](/documentation/testing_validation/w3/url.py_validation.png)
 
 ___
 
@@ -135,7 +118,7 @@ Full testing was performed on the following devices:
 
 * Laptop:
   * Macbook Pro 2021 14 inch screen
-* Mobile Devices:
+  * Mobile Devices:
   * iPhone 13 pro.
   * iPhone 11 pro.
   * Phone X.

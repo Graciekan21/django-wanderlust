@@ -212,88 +212,16 @@ ___
 
 Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 
-During the project, I conducted testing for functionality and styling issues after building each section or Function/Model. Corrections or fixes were made before proceeding. Additionally, I enlisted friends to test the site by signing up, adding, and deleting comments using various devices and platforms (IOS, Android, Mobile, Tablet, etc.), and they reported any encountered issues with functionality or styling.
+### Solved Bugs 
 
-## Manual Testing
+| No | Bugs | How I solved the issue |
+| :--- | :--- | :--- |
+| 1 | As an admin, I was also liking the blog posts I posted. | Hiding the ability for the admin to like and unlike apost |
+| 2 | I encountered issues with the slug while editing a post, causing errors whenever a user attempted to edit a post | I hid labels for specific fields using Style.css |
+|3 | The logo and favicon were not appearing on the deployed site | The issue was resolved by removing "Disable collectstatic" from the Heroku config variable. |
+| 4 | I also encountered numerous indentation errors, excessive white space, and lines that were too long (81>79) characters while validating through pep8 | This was resolved by utilizing a formatting documentation for each file |
 
-*For any failures, a more detailed description is provided below in the tables.*
-
-ADMIN
-| TEST | OUTCOME | PASS/FAIL|
-|:---:|:---:|:---:|
-| Create Blog Post | The post has been successfully created and is now visible | Pass |
-| Edit Blog Post | Post content and category have been successfully updated | Pass |
-| Delete User Comments | Comment successfully deleted | Pass |
-| Delete Blog Post | Post deleted successfully | Pass |
-| Create test posts to verify pagination | Next/Previous Page appears at the bottom of the screen | Pass |
-| Like and Unlike a blog post | The admin can not like or unlike a post that they posted | Pass |
-| Edit Blog post |
-
-
-## User
-
-| TEST | OUTCOME | PASS/FAIL|
-|:---:|:---:|:---:|
-| Create Account | successfully created | Pass |
-| Login | Login Successful | Pass |
-| Logout | Logout Successful | Pass |
-| Read Full Blog Post | PostDetail page loaded successfully | Pass |
-| Leave a comment below the blog post | Comment Successfully Added| Pass |
-| Edit a comment below the blog post | update successfully Added | Pass |
-| Delete Comment | Comment Deleted | Pass |
-| Filter Posts by category | Posts marked as selected category displayed successfully | Pass |
-| Create User Account to check access to restricted pages (add_post, add_category)| Page displayed correct error message, with no access to restricted content | Pass |
-
-
-## Lighthouse
-
-The performance scores appear to be low, and I attribute this to the images uploaded for each blog post being hosted on a third-party cloud-based platform.
-
-Mobile
-
-![Lighthouse Mobile Score](documentation/images/lighthouse_mobile.png)
-
-Desktop
-
-![Lighthouse Desktop Score](documentation/images/lighthouse_desktop.png)
-
-
-
-## Validation Testing
-
-![Add post](/documentation/testing/w3/) -
-![Edit post](/documentation/testing/w3/edit_validate.png) - 
-![comment page](/documentation/testing/w3/comment_validate.png) -
-![index.html](/documentation/testing/w3/) -
-![base.html](/documentation/testing/w3/base_html.png) -
-![404.html](/documentation/testing/w3/404_Html.png) - 
-
-
-### HTML & CSS
-
-HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
-
-error -----
-
-![HTML Validation - Descendant Error](documentation/testing_documentation/validation/base.html_button_descendant.png)
-
-Fixed:
-
-## Python Testing
-
-Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
-
-The only issues encountered here were with indentations and the fact that certain lines of text exceeded the 79-character limit, but these have now been resolved.
-![Error solved]()
-Python Files Tested:
-
-
-- models
-- forms
-- views
-- urls
-
-___
+### known Bugs
 
 ## Deployment
 
