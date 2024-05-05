@@ -17,8 +17,8 @@ ___
 
 - [AUTOMATED TESTING](#automated-testing)
   - [Bugs](#bugs)
-  - [Lighthouse](#lighthouse)
-  - [MANUAL TESTING](#manual-testing)
+- [Lighthouse](#lighthouse)
+- [MANUAL TESTING](#manual-testing)
   - [Validation Testing](#validation-testing)
   - [HTML \& CSS](#html--css)
   - [Python Testing](#python-testing)
@@ -70,6 +70,8 @@ ADMIN
 | Like and Unlike a blog post that you did not create | Successfully | Pass |
 | Any character, such as a space, or submitting an empty form while editing or adding a post. | It will provide feedback indicating invalid input. | Pass|
 
+___
+
 ### Validation Testing
 
 ### HTML & CSS
@@ -79,8 +81,12 @@ HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
 ### W3 Validator
 
 For html validation i utilized [w3 HTML](https://jigsaw.w3.org/)
-I utilized the "View Page Source" option to access the HTML code, then copied and pasted it into the W3C CSS validator for validation
- [W3C css](https://jigsaw.w3.org/css-validator/validator/) 
+I together with the "View Page Source" option to access the HTML code, then copied and pasted it into the W3C. 
+
+CSS validator for validation
+ [W3C css](https://jigsaw.w3.org/css-validator/validator/)
+
+ ## Testing 
 
 ![Home Page](/documentation/testing_validation/w3/home_validation.png) 
 
@@ -91,7 +97,7 @@ I utilized the "View Page Source" option to access the HTML code, then copied an
 
 ![comment page](/documentation/testing_validation//w3/comment_validation.png) 
 
-![index.html](/documentation/testing_validation/w3/edit_validation.png)                                                                                                                                                                                                     ![base.html](/documentation/testing/w3/base_html.png) 
+![index.html](/documentation/testing_validation/w3/edit_validation.png)                                                                                                          ![base.html](/documentation/testing/w3/base_html.png) 
 
 ![404.html](/documentation/testing/w3/404_Html.png) 
 
@@ -106,8 +112,11 @@ Python Files Tested:
 No errors
 
 - [models](/documentation/testing_validation/w3/model.py_validation.png)
+
 - [forms](/documentation/testing_validation/w3/form.py_validation.png)
+
 - [views](/documentation/testing_validation/w3/view.py_validation.png)
+
 - [urls](/documentation/testing_validation/w3/url.py_validation.png)
 
 ___

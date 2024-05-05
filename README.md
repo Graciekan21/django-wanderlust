@@ -37,11 +37,11 @@ Link to live site - [https://django-wanderlust-96b58b7e2665.herokuapp.com/](http
   - [Features Not Included](#features-not-included)
 - [Technologies Used](#technologies-used)
 - [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
-- [Agile](#agile)
--  [Testing](#testing)
-  - [Solved Bugs](#solved-bugs)
-  - [Known Bugs](#known-bugs)
-   - [Deployment](#deployment)
+  - [Agile](#agile)
+  -  [Testing](#testing)
+    - [Solved Bugs](#solved-bugs)
+    - [Known Bugs](#known-bugs)
+  - [Deployment](#deployment)
     - [Github Deployment](#github-deployment)
     - [Creating a Fork or Copying](#creating-a-fork-or-copying)
     - [Clone](#clone)
@@ -216,12 +216,20 @@ Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 
 | No | Bugs | How I solved the issue |
 | :--- | :--- | :--- |
-| 1 | As an admin, I was also liking the blog posts I posted. | Hiding the ability for the admin to like and unlike apost |
+| 1 | As an admin, I unintentionally liked the blog posts I posted, which was not my intention | Hiding the ability for the admin to like and unlike blog they posted |
 | 2 | I encountered issues with the slug while editing a post, causing errors whenever a user attempted to edit a post | I hid labels for specific fields using Style.css |
-|3 | The logo and favicon were not appearing on the deployed site | The issue was resolved by removing "Disable collectstatic" from the Heroku config variable. |
+|3 | The logo and favicon were not appearing on the deployed site | The issue was resolved by removing "Disable collectstatic" from the Heroku config variable |
 | 4 | I also encountered numerous indentation errors, excessive white space, and lines that were too long (81>79) characters while validating through pep8 | This was resolved by utilizing a formatting documentation for each file |
+| 5 | My static files where not loading on deployed site | 1. Delete the CSS folder in the Cloudinary media library (NOT in Gitpod)
+2.Compare your settings.py file to the CodeStar walkthrough settings.py file to ensure that is set up correctly
+3.In the Gitpod terminal, re-run the collect static command:
+python3 manage.py collectstatic |
+| 6 | I was receiving a DisallowedHost error when trying to view the site |
+ I had to update the ALLOWED_HOSTS in settings.py by replacing it with the one shown on the error page |
+
 
 ### known Bugs
+
 
 ## Deployment
 
@@ -283,7 +291,7 @@ For inspiration and fine-tuning of my code, I referred to John Elder's youtube c
 
 The project guide and the readme layout was based on the example by [Kasia Bogucka - Portfolio Project 4 - The guide to MVP](https://youtu.be/vIv1c6RLBac?si=3pncBJmgvJ0tgBcd ) 
 
-I also want to aknoledge My mentor [Jubril Akolade](https://learn.codeinstitute.net/ci_support/diplomainsoftwaredevelopmentecomm/mentor) for help me to understand how to structure the readme with[ Sdalsosa- Readme](https://github.com/Sdalsosa/ComposerHub/blob/main/README.md)
+I also want to aknoledge My mentor [Jubril Akolade](https://learn.codeinstitute.net/ci_support/diplomainsoftwaredevelopmentecomm/mentor) for help me to understand the project approach and how to structure the readme with[ Sdalsosa- Readme](https://github.com/Sdalsosa/ComposerHub/blob/main/README.md)
  
 The wireframe mockups were created using [figma](https://www.figma.com//)
 After finishing, the README file was subjected to a spelling and grammar check using.
