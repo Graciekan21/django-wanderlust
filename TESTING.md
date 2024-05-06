@@ -91,15 +91,15 @@ CSS validator for validation
 ![Home Page](/documentation/testing_validation/w3/home_validation.png) 
 
 
-![Add post](/documentation/testing_validation/w3/) - It pased validation
+![Add post](/documentation/testing_validation/w3/add_post_validation.png) - It pased validation
 
-![Edit post](/documentation/testing_validation//w3/edit_validation.png) 
+![Edit post](/documentation/testing_validation/edit_validation.png) 
 
-![comment page](/documentation/testing_validation//w3/comment_validation.png) 
+![comment page](/documentation/testing_validation/w3/comment_validation.png) 
 
-![index.html](/documentation/testing_validation/w3/edit_validation.png)                                                                                                          ![base.html](/documentation/testing/w3/base_html.png) 
+![index.html](/documentation/testing_validation/w3/edit_validation.png)                                                                                                          ![base.html](/documentation/testing_validation/w3/base_html.png) 
 
-![404.html](/documentation/testing/w3/404_Html.png) 
+![404.html](/documentation/testing_validation/w3/404_html.png) 
 
 
 ## Python Testing
@@ -111,13 +111,13 @@ The only issues encountered here were with indentations and the fact that certai
 Python Files Tested:
 No errors
 
-- [models](/documentation/testing_validation/w3/model.py_validation.png)
+![Models](/documentation/testing_validation/w3/model.py_validation.png)
 
-- [forms](/documentation/testing_validation/w3/form.py_validation.png)
+![Forms](/documentation/testing_validation/w3/form.py_validation.png)
 
-- [views](/documentation/testing_validation/w3/view.py_validation.png)
+![Views](/documentation/testing_validation/w3/view.py_validation.png)
 
-- [urls](/documentation/testing_validation/w3/url.py_validation.png)
+![Urls](/documentation/testing_validation/w3/url.py_validation.png)
 
 ___
 
