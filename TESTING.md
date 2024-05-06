@@ -88,21 +88,31 @@ CSS validator for validation
 
  ## Testing 
 
+ HOME PAGE
+
 ![Home Page](/documentation/testing_validation/w3/home_validation.png) 
 
+REGISTER PAGE
 ![Register page](/documentation/testing_validation/w3/register_error.png) - Test errors do not affect the running of the app.
+
+LOGIN PAGE
+
 ![Login page](/documentation/testing_validation/w3/login_validation.png)
+
+APP POST PAGE
 
 ![Add post](/documentation/testing_validation/w3/add_post_validation.png) 
 
+EDIT POST PAGE
+
 ![Edit post](/documentation/testing_validation/w3/edit_validation.png) 
+
+COMMENT PAGE
 
 ![comment page](/documentation/testing_validation/w3/comment_validation.png) 
 
-![index.html](/documentation/testing_validation/w3/edit_validation.png)                                                                                                          ![base.html](/documentation/testing_validation/w3/base_html.png) 
-
+                                                                                                    
 ![404.html](/documentation/testing_validation/w3/404_html.png) 
-
 
 ## Python Testing
 
@@ -113,11 +123,19 @@ The only issues encountered here were with indentations and the fact that certai
 Python Files Tested:
 No errors
 
+Models.py
+
 ![Models](/documentation/testing_validation/w3/model.py_validation.png)
+
+Forms.py
 
 ![Forms](/documentation/testing_validation/w3/form.py_validation.png)
 
+views.py
+
 ![Views](/documentation/testing_validation/w3/view.py_validation.png)
+
+Urls.py
 
 ![Urls](/documentation/testing_validation/w3/url.py_validation.png)
 
