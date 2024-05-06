@@ -90,10 +90,12 @@ CSS validator for validation
 
 ![Home Page](/documentation/testing_validation/w3/home_validation.png) 
 
+![Register page](/documentation/testing_validation/w3/register_error.png) - Test errors do not affect the running of the app.
+![Login page](/documentation/testing_validation/w3/login_validation.png)
 
-![Add post](/documentation/testing_validation/w3/add_post_validation.png) - It pased validation
+![Add post](/documentation/testing_validation/w3/add_post_validation.png) 
 
-![Edit post](/documentation/testing_validation/edit_validation.png) 
+![Edit post](/documentation/testing_validation/w3/edit_validation.png) 
 
 ![comment page](/documentation/testing_validation/w3/comment_validation.png) 
 
