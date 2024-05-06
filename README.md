@@ -220,17 +220,19 @@ Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 | 2 | I encountered issues with the slug while editing a post, causing errors whenever a user attempted to edit a post | I hid labels for specific fields using Style.css |
 |3 | The logo and favicon were not appearing on the deployed site | The issue was resolved by removing "Disable collectstatic" from the Heroku config variable |
 | 4 | I also encountered numerous indentation errors, excessive white space, and lines that were too long (81>79) characters while validating through pep8 | This was resolved by utilizing a formatting documentation for each file |
-| 5 | My static files where not loading on deployed site | 1. Delete the CSS folder in the Cloudinary media library (NOT in Gitpod)
-2.Compare your settings.py file to the CodeStar walkthrough settings.py file to ensure that is set up correctly
-3.In the Gitpod terminal, re-run the collect static command:
-python3 manage.py collectstatic |
-| 6 | I was receiving a DisallowedHost error when trying to view the site |
- I had to update the ALLOWED_HOSTS in settings.py by replacing it with the one shown on the error page |
-
+| 5 | My static files were not loading on the deployed site | 1. Deleted the CSS folder in the Cloudinary media library (NOT in Gitpod)
+2.Compared my settings.py file to the CodeStar walkthrough settings.py file to ensure that it is set correctly 3.In the Gitpod terminal, re-run the collect static command: python3 manage.py collectstatic |
+| 6 | I was getting a DisallowedHost error when attempting to view the site | I had to update the ALLOWED_HOSTS in settings.py by replacing it with the one shown on the error page |
+| 7 | I encountered an error in the terminal caused by the Cloudinary version. I had to | I had to install pip uninstall cloudinary
+pip install cloudinary==1.25.0
+pip freeze > requirements.tx and the pip uninstall dj3-cloudinary-storage
+pip install dj3-cloudinary-storage==0.0.5
+pip freeze > requirements.txt, then run server and it worked as it should |
 
 ### known Bugs
+On the Register page, I noticed some errors during validation, but they don't seem to affect the app, and none of the users have complained about anything. I believe they are caused by Django. 
 
-
+![Error on Register page](/documentation/testing_validation/w3/register_error.png)
 ## Deployment
 
 ### Github Deployment

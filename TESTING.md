@@ -80,11 +80,11 @@ HTML & CSS testing, I used [W3 Validator](https://validator.w3.org/)
 
 ### W3 Validator
 
-For html validation i utilized [w3 HTML](https://jigsaw.w3.org/)
+For html validation i utilized [W3 HTML](https://validator.w3.org/nu/#textarea)
 I together with the "View Page Source" option to access the HTML code, then copied and pasted it into the W3C. 
 
 CSS validator for validation
- [W3C css](https://jigsaw.w3.org/css-validator/validator/)
+ [W3C CSS](http://jigsaw.w3.org/css-validator/validator$link)
 
  ## Testing 
 
