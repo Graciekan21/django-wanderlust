@@ -230,7 +230,8 @@ pip install dj3-cloudinary-storage==0.0.5
 pip freeze > requirements.txt, then run server and it worked as it should |
 
 ### known Bugs
-On the Register page, I noticed some errors during validation, but they don't seem to affect the app, and none of the users have complained about anything.  
+On the Register page, I noticed some errors during validation, but they don't seem to affect the app, and none of the users have complained about anything. I believe they are caused by Django.
+ 
 
 ![Error on Register page](/documentation/testing_validation/w3/register_error.png)
 ## Deployment
